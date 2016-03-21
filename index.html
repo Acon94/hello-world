@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>grid-layout demo</title>
+  <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+     function initPushwoosh()
+	 {
+	     var pushNotification = cordova.require("com.pushwoosh.plugins.pushwoosh.PushNotification");
+
+	     //set push notifications handler
+	     document.addEventListener('push-notification', function(event) {
+	         var title = event.notification.title;
+	         var userData = event.notification.userdata;
+
+	         if(typeof(userData) != "undefined") {
+	             console.warn('user data: ' + JSON.stringify(userData));
+	         }
+
+	         alert(title);
+	     });
+
+	     //initialize Pushwoosh with projectid: "557292455072", pw_appid : "257F7-4B27C". This will trigger all pending push notifications on start.
+	     pushNotification.onDeviceReady({ projectid: "557292455072", pw_appid : "257F7-4B27C" });
+
+	     //register for pushes
+	     pushNotification.registerDevice(
+	         function(status) {
+	             var pushToken = status;
+	             console.warn('push token: ' + pushToken);
+	         },
+	         function(status) {
+	             console.warn(JSON.stringify(['failed to register ', status]));
+	         }
+	     );
+}
+
+    </script>
+
+<style>
+
+	 @import "css/basic.css";
+
+</style>
+
+</head>
+<body>
+
+       <div data-role="page" id="page1">
+		  <div data-role="header">
+		    <h1>Raspberry PI IP survelience system</h1>
+		  </div>
+		  <div role="main" class="ui-content">
+		    <div class="ui-grid-a">
+		      <div class="ui-block-a"></span><a href="stream1.html"  class="icon"><span  class="glyphicon glyphicon-facetime-video"></a></div>
+		      <div class="ui-block-b"></span><a href="stream1.html"  class="icon"><span  class="glyphicon glyphicon-facetime-video"></a></div>
+		      <div class="ui-block-c"></span><a href="stream1.html"  class="icon"><span  class="glyphicon glyphicon-facetime-video"></a></div>
+		      <div class="ui-block-d"><a href="captures.html"  class="icon"><span  class="glyphicon glyphicon-picture"></a></div>
+		    </div><!-- /grid-a -->
+		  </div>
+</div>
+
+</body>
+</html>
