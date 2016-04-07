@@ -1,0 +1,75 @@
+{% extends 'student_base.html.twig' %}
+
+{# ------------------------------------------------- #}
+{% block pageTitle %}List DVDs page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block jobsLinkStyle %}current_page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block main %}
+
+<!-- start table for displaying DVD details -->
+<h2>Lists of DVDs and their average votes</h2>
+
+ <form
+            method="post"
+            action="?action=processCVForm"
+    >
+    
+    
+
+   	<table>
+   	  	<tr>
+   	            Firstname:
+   		      
+   	            <input type="text" name="first" value="{{cvs.first }}" required>
+   	   	</tr>
+   	        <tr>
+		    Surname:
+		   			      
+		    <input type="text" name="surname" value="{{cvs.surname}}" required>
+   	   	</tr>
+   	            Age:
+   	            
+   	             <input type="text" name="age"  value="{{cvs.age }}"required>
+   	            
+   		            
+         	  </p>
+                   <p>
+	  	     Address:
+	 	      <br>
+	  	      <textarea name="address" cols="40" rows="5" {{cvs.address}} >
+	  	      	{{cv.address}}
+	  	      </textarea>
+      		  </p>
+         			  
+         			
+        	   <p>
+        	   Gender:
+        	   <br>
+        	       <input type="radio" name="gender" value="male"> Male<br>
+  		       <input type="radio" name="gender" value="female"> Female<br>
+ 		       <input type="radio" name="gender" value="other"> Other
+              </p>
+              <p>
+	              Experience:
+	           <br>
+	         <textarea name="experience" cols="40" rows="5"   >
+	                {{cvs.experience}}
+			  
+	         </textarea>
+	       <input type="hidden" name="id" value="{{ cvs.id }}">
+         </p>
+        			   
+      	   <p>
+		   <input type="submit" value="Send CV">
+      	   </p>
+      		</table>
+       	
+	</form>
+
+
+
+
+{% endblock %}

@@ -1,29 +1,26 @@
-<!doctype html>
+{% extends 'student_base.html.twig' %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>I am the home page</title>
-    <style>
-        @import "css/style.css";
-    </style>
-</head>
-<body>
-	<div class="header">
-		<ul>
-		  <li><a href="index.php">Home</a></li>
-		  <li><a href="#">News</a></li>
-		  <li><a href="#">Contact</a></li>
-		  <li id="login"><a href="login.php">Login</a></li>
-		</ul>
-	</div>
-	<div class="main-content">
+{# ------------------------------------------------- #}
+{% block pageTitle %}Home page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block indexLinkStyle %}current_page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block main %}
+
+
+<div class="main-content">
 		<section>
 		    <div id="one">
-		    	<h1>Student Page</h1>
+		    	<h1> Year 3 project placement System</h1>
+		    	<h1> Student View</h1>
+		    	<p>
+		    		this is a system where by there is three diffent views 
+		    		to the system depending on how you log in
+		    		the system can either by used as a lecturer an employer or a student.
 		    	
-			        
-			        
+		    	</p>
 		    </div>
 		    <div id="two">
 		    	<img src="images/job.jpg">
@@ -32,16 +29,9 @@
 		</section>
 			
 	</div>
-	
-	<div class ="footer">
-		
-		<p>
-			Andrew Connolly B00069517 Year 3
-		
-		</p>
-	</div>
 
 
 
-</body>
-</html>
+
+
+{% endblock %}

@@ -1,22 +1,16 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>I am the home page</title>
-    <style>
-        @import "css/style.css";
-    </style>
-</head>
-<body>
-	<div class="header">
-		<ul>
-		  <li><a href="#">Home</a></li>
-		  <li><a href="#">News</a></li>
-		  <li><a href="#">Contact</a></li>
-		  <li id="login"><a href="login.php">Login</a></li>
-		</ul>
-	</div>
-	<div class="main-content">
+{% extends '_base.html.twig' %}
+
+{# ------------------------------------------------- #}
+{% block pageTitle %}Home page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block indexLinkStyle %}current_page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block main %}
+
+
+<div class="main-content">
 		<section>
 		    <div id="one">
 		    	<h1> Year 3 project placement System</h1>
@@ -35,15 +29,36 @@
 			
 	</div>
 	
-	<div class ="footer">
-		
-		<p>
-			Andrew Connolly B00069517 Year 3
-		
-		</p>
-	</div>
+<p>
+This site offers you the chance to VOTE on your favourite DVD films ...
+</p>
+
+<fieldset>
+    <legend>Send us a message to say hi!</legend>
+
+    <form
+            method="post"
+            action="?action=processMessageForm"
+    >
+
+        <p>
+            Your message:
+            <br>
+            <textarea name="text" cols="40" rows="5" required></textarea>
+        </p>
+
+        <p>
+            Your name:
+            <br>
+            <input type="text" name="user" required>
+        </p>
 
 
+        <p>
+            <input type="submit" value="send message">
+        </p>
 
-</body>
-</html>
+    </form>
+</fieldset>
+
+{% endblock %}

@@ -1,36 +1,40 @@
-<!doctype html>
+{% extends '_base.html.twig' %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>I am the home page</title>
-    <style>
-        @import "css/style.css";
-    </style>
-</head>
-<body>
-	<div class="header">
-		<ul>
-		  <li><a href="index.php">Home</a></li>
-		  <li><a href="#">News</a></li>
-		  <li><a href="#">Contact</a></li>
-		  <li id="login"><a href="login.php">Login</a></li>
-		</ul>
-	</div>
-	<div class="main-content">
+{# ------------------------------------------------- #}
+{% block pageTitle %}Messages page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block messagesLinkStyle %}current_page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block main %}
+
+
+<!-- start table for displaying DVD details -->
+<div class="main-content">
 		<section>
 		    <div id="one">
 		    	<h1> Login Page</h1>
 		    	<?php echo $error; ?>
 			        
-			        <!-- form for login -->
-			        <form method="post" action="login.php">
-			            <label for="username">Username:</label><br/>
-			            <input type="text" name="username" id="username"><br/>
-			            <label for="password">Password:</label><br/>
-			            <input type="password" name="password" id="password"><br/>
-			            <input type="submit" value="Log In!">
-        			</form>
+			      <form
+			          action="/index.php?action=processLogin"
+			          method="post"
+			          >
+			      
+			          <p>
+			              username:
+			              <input type="text" name="username">
+			          </p>
+			      
+			          <p>
+			              password:
+			              <input type="text" name="password">
+			          </p>
+			      
+			          <input type="submit" value="login">
+			      
+</form>
 		    </div>
 		    <div id="two">
 		    	<img src="images/job.jpg">
@@ -40,15 +44,33 @@
 			
 	</div>
 	
-	<div class ="footer">
-		
-		<p>
-			Andrew Connolly B00069517 Year 3
-		
-		</p>
-	</div>
 
+{% for message in messages %}
+    <hr>
+    <p>
+        posted by <strong>{{ message.user }}</strong>
+        <br>
+        {{ message.timestamp|date("l jS M h:i:s A")  }}
+    </p>
 
+    <blockquote>
+        {{ message.text }}
+    </blockquote>
 
-</body>
-</html>
+    <form
+        action="?action=deleteMessage&id={{ message.id }}"
+        method="post">
+        <input type="submit" value="(delete)">
+    </form>
+
+    <form
+            action="?action=editMessage&id={{ message.id }}"
+            method="post">
+        <input type="submit" value="(edit)">
+    </form>
+
+{% else %}
+    <p>(no messages found)</p>
+{% endfor %}
+
+{% endblock %}
