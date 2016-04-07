@@ -1,6 +1,7 @@
 <?php
 session_start();
-echo "<p style='margin-top:5%;'>WELCOME".$_SESSION['username']."</p>";
+
+
 
 require_once __DIR__ . '/../app/setup.php';
 

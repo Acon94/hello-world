@@ -1,54 +1,37 @@
 <?php
-// autoloader
-// ------------
-require_once __DIR__ . '/../vendor/autoload.php';
+	session_start();
 
-// my settings
-// ------------
-$myTemplatesPath = __DIR__ . '/../templates';
+		$conn = new PDO('mysql:host=localhost;dbname=assighnment','root','');
 
-// setup twig
-// ------------
-$loader = new Twig_Loader_Filesystem($myTemplatesPath);
-$twig = new Twig_Environment($loader);
+		if(isset($_POST['login'])){
+			$username = $_POST['username'];
+			$password = $_POST['password'];
 
-// build args array
-// ------------
-$argsArray = [
-    'name' => 'Andrew'
-];
+			$query = $conn->prepare("SELECT roll FROM user WHERE username = '$username' AND password = '$password' ");
+			$query->execute();
 
-// render (draw) template
-// ------------
-$templateName = 'login';
-print $twig->render($templateName . '.html.twig', $argsArray);
+			$roll = $query->fetchColumn();
 
 
-    // Start the session
-    session_start();
+			if($roll == "student"){
+				$_SESSION['username'] = $username;
+				$_SESSION['loggedIn'] = true;
 
-    // Defines username and password. Retrieve however you like,
-    $username = "user";
-    $password = "password";
+				header('location:student.php');
+			}
+			else if($roll == "lecturer"){
+				$_SESSION['username'] = $username;
+				$_SESSION['loggedIn'] = true;
+				header('location:lecturer.php');
 
-    // Error message
-    $error = "";
+			}else if($roll == "employer"){
+				$_SESSION['username'] = $username;
+				$_SESSION['loggedIn'] = true;
+				header('location:employer.php');
 
-    // Checks to see if the user is already logged in. If so, refirect to correct page.
-    if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
-        $error = "success";
-        header('Location: student.php');
-    }
-
-    // Checks to see if the username and password have been entered.
-    // If so and are equal to the username and password defined above, log them in.
-    if (isset($_POST['username']) && isset($_POST['password'])) {
-        if ($_POST['username'] == $username && $_POST['password'] == $password) {
-            $_SESSION['loggedIn'] = true;
-            header('Location: student.php');
-        } else {
-            $_SESSION['loggedIn'] = false;
-            $error = "Invalid username and password!";
-        }
-    }
-
+			}
+			else{
+				$message = "wrong answer";
+				echo "<script type='text/javascript'>alert('$message');</script>";
+			}
+	}

@@ -1,7 +1,13 @@
+
 <?php
 session_start();
-echo "<p style='margin-top:5%;'>WELCOME".$_SESSION['username']."</p>";
 
+ echo "<p style='margin-top:3%;'>WELCOME".$_SESSION['username'].
+
+
+
+
+ "</p>";
 require_once __DIR__ . '/../app/setup.php';
 
 use Itb\MainController;
@@ -18,18 +24,8 @@ $messageController = new MessageController();
 
 
 switch ($action){
-    case 'job':
-        $mainController->jobAction($twig);
-        break;
-    case 'cv':
-	        $mainController->cvAction($twig);
-        break;
-    case 'student':
+
     default:
-        $mainController->studentAction($twig);
-
-
+        $mainController->employerAction($twig);
 
 }
-
-
