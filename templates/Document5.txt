@@ -1,0 +1,44 @@
+{% extends 'student_base.html.twig' %}
+
+{# ------------------------------------------------- #}
+{% block pageTitle %}Messages page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block messagesLinkStyle %}current_page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block main %}
+
+
+<h1>VIEW COMMENTS </h1>
+	
+<section>
+    <div id="one">
+{% for privatemessages in privatemessages %}
+    <hr>
+    
+    
+        <hr>
+        
+        <p>
+            posted by <strong>{{ privatemessages.user }}</strong>
+            <br>
+            {{ privatemessages.timestamp|date("l jS M h:i:s A")  }}
+        </p>
+    
+        <blockquote>
+            {{ privatemessages.text }}
+        </blockquote>
+    
+    
+    
+    {% else %}
+        <p>(no messages found)</p>
+    {% endfor %}
+    </div>
+    
+</section>
+
+
+
+{% endblock %}

@@ -40,14 +40,23 @@
     // 	      .5   1    2    3    4    5     stars
 -->
 
+
 {% for dvd in dvds %}
     <tr>
         <td>{{ dvd.id }}</td>
-        <td><a href="/?action=detail&id={{ dvd.id }}">{{ dvd.first }}</a></td>
+        <td>{{ dvd.first }}</td>
         <td>{{ dvd.surname}}</td>
         <td>{{ dvd.age }}</td>
         <td>{{ dvd.gpa }} </td>
         <td>{{ dvd.status }}</td>
+        <td>
+        	<form
+				        action="/downloadCV&{{ dvd.id }}}"
+				        method="get">
+				        <input type="submit" value="dnl cv">
+	</form>
+    </td>
+	
 
         
 

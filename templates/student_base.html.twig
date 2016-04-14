@@ -1,10 +1,8 @@
-<?php
-	session_start();
-?>
+
 <!doctype html>
 <html lang="en">
 <head>
-    <title>EVOTE DVD - {% block pageTitle %}{% endblock %}</title>
+    <title>Job System {% block pageTitle %}{% endblock %}</title>
     <meta charset="utf-8">
     <style>
        
@@ -25,16 +23,21 @@
     <ul>
         <li>
        
-            <a href="/?action=cv&id={{ cv.id }}"> CV </a>
+            <a href="/cv&{{id}}"> My CV </a>
      
+   </li>
+   <li>
+          
+               <a href="/Viewprivatemessages&{{id}}"> Inbox </a>
+        
    </li>
       
         <li>
-            <a href="/?action=job" class="{% block jobsLinkStyle %}{% endblock %}">jobs</a>
+            <a href="/job" class="{% block jobsLinkStyle %}{% endblock %}">jobs</a>
         </li>
         
          <li>
-	    <a href="/?action=viewComments" class="{% block commentsLinkStyle %}{% endblock %}">Comments</a>
+	    <a href="/viewComments" class="{% block commentsLinkStyle %}{% endblock %}">Comments</a>
         </li>
 
 
@@ -42,8 +45,16 @@
             <a href="/?action=login"  class="{% block messagesLinkStyle %}{% endblock %}">Logout</a>
         </li>
         <li>
-        	{{User.checkRole()}}
+        	<?php  echo $_SESSION['id']; ?>
+        
         </li>
+        
+        	
+        <li>
+        	
+        	
+        </li>
+        
 	
 	   
     </ul>

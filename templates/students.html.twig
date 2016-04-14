@@ -39,6 +39,11 @@
     //   	0 - 15 - 40 - 55 - 70 - 85 - 100 %age
     // 	      .5   1    2    3    4    5     stars
 -->
+<form
+	        action="/createStudent"
+	        method="post">
+	        <input type="submit" value="Create a new Student">
+	</form>
 
 {% for dvd in dvds %}
     <tr>
@@ -48,17 +53,26 @@
         <td>{{ dvd.age }}</td>
         <td>{{ dvd.gpa }} </td>
         <td>{{ dvd.status }}</td>
+        <td><form
+	          action="/editStudent&id={{ dvd.id }}"
+	            method="post">
+	        <input type="submit" value="(edit)">
+    </form></td>
+    <td>
         <form
-	        action="?action=deleteMessage&id={{dvd.id }}"
+	        action="/deleteStudent&id={{dvd.id }}"
 	        method="post">
 	        <input type="submit" value="(delete)">
 	</form>
+    </td>
+    <td>
+            <form
+    	        action="/privateMessage&{{dvd.id }}"
+    	        method="post">
+    	        <input type="submit" value="send private message">
+    	</form>
+    </td>
 	
-	  <form
-	            action="?action=editMessage&id={{ dvd.id }}"
-	            method="post">
-	        <input type="submit" value="(edit)">
-    </form>
 
         
 

@@ -1,0 +1,66 @@
+{% extends 'lecturer_base.html.twig' %}
+
+{# ------------------------------------------------- #}
+{% block pageTitle %}message edit page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block main %}
+
+<h1>
+Create A new Student
+</h1>
+
+
+<fieldset>
+    <legend>Create a student</legend>
+
+    <form
+            method="post"
+            action="/processCreateStudentForm"
+    >
+
+        <p>
+            Name:
+            <br>
+            <input type="text" name="first" cols="40" rows="5"  required >
+       	    <input type="text" name="surname" required >
+       	
+       	Age : <input type="text" name="age" required ">
+       </p>
+
+        <p>
+          GPA:
+          
+            <input type="text" name="gpa" required ">
+        </p>
+        <p>
+	          Employment Status:
+	          
+	            <input type="text" name="status" required ">
+        </p>
+         <p>
+		          Profile Information
+		          
+		          Username:
+		            <input type="text" name="username" required ">
+		          Password:
+		            <input type="text" name="password" required ">
+		            <input type="hidden" name="role" value="1" required ">
+		            <input type="hidden" name="age" value="23" required ">
+		            <input type="hidden" name="address" value="fake" required ">
+		            <input type="hidden" name="gender" value="Male" required ">
+		            <input type="hidden" name="experience" value="shop" required ">
+		            <input type="hidden" name="image" value="default.png" required ">
+		        
+        </p>
+
+        <input type="text" name="id" value={{id}} >
+
+        <p>
+            <input type="submit" value="Create Student">
+        </p>
+
+    </form>
+</fieldset>
+
+{% endblock %}

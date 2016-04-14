@@ -11,14 +11,18 @@
 
 <!-- start table for displaying DVD details -->
 <h2>Lists of DVDs and their average votes</h2>
+	
+        
+        
+        
 
- <form
+ <form 
+ 	action="/processCVForm"
             method="post"
-            action="?action=processCVForm"
+           
     >
     
-    
-
+   
    	<table>
    	  	<tr>
    	            Firstname:
@@ -39,8 +43,8 @@
                    <p>
 	  	     Address:
 	 	      <br>
-	  	      <textarea name="address" cols="40" rows="5" {{cvs.address}} >
-	  	      	{{cv.address}}
+	  	      <textarea name="address" required cols="40" rows="5">
+	  	      	{{cvs.address}}
 	  	      </textarea>
       		  </p>
          			  
@@ -48,25 +52,25 @@
         	   <p>
         	   Gender:
         	   <br>
-        	       <input type="radio" name="gender" value="male"> Male<br>
+        	       <input type="radio" name="gender" value="male" > Male<br>
   		       <input type="radio" name="gender" value="female"> Female<br>
  		       <input type="radio" name="gender" value="other"> Other
               </p>
               <p>
 	              Experience:
 	           <br>
-	         <textarea name="experience" cols="40" rows="5"   >
+	         <textarea name="experience" required cols="40" rows="5">
 	                {{cvs.experience}}
-			  
-	         </textarea>
-	       <input type="hidden" name="id" value="{{ cvs.id }}">
+		 </textarea>
+	       <input type="text" name="id" value="{{ cvs.id }}">
          </p>
         			   
       	   <p>
+      	   	   <input type="file" name="image"  >
 		   <input type="submit" value="Send CV">
       	   </p>
       		</table>
-       	
+      
 	</form>
 
 

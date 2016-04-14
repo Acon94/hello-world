@@ -1,12 +1,4 @@
-John	Door		Site 
-in a bar 
-in a shop
-John	Door	male	Site 
-in a bar 
-in a shop
-Willy	Dunne	female	In a shop 
-on a bus 
-in a bar
-Joe	Bloogs	male	SHOPS 
-Butchers 
-ON a site
+
+
+
+

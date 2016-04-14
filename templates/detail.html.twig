@@ -1,4 +1,4 @@
-{% extends 'student_base.html.twig' %}
+{% extends 'lecturer_base.html.twig' %}
 
 {# ------------------------------------------------- #}
 {% block pageTitle %}Details for one DVD{% endblock %}
@@ -8,7 +8,7 @@
 {% block main %}
 
 <!-- start table for displaying DVD details -->
-<h2>Details of one DVD</h2>
+<h2>Details of one CV</h2>
 
 <table  border="1">
     <tr>
@@ -30,9 +30,11 @@
     </tr>
     	
    
-
+	<tr>
+	      <td>  <img src="images\{{cvs.image}}"> </td>
+        
   
-   
+   	</tr>
 
     
 </table>

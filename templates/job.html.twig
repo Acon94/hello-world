@@ -38,7 +38,13 @@
         <td>{{ job.position }}</td>
         <td>{{ job.location }}</td>
         <td>{{ job.expires }}</td>
-       
+        <td>
+        <form
+	       action="/apply"
+	        method="post">
+	        <input type="submit" value="Apply for position">
+	</form>
+       </td>
         
 
     </tr>

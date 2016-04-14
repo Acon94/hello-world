@@ -1,0 +1,28 @@
+ public function ViewPrivateCommentsAction(Request $request, Application $app)
+	    {
+
+				session_start();
+						        $id = $_SESSION['id'];
+						        $_SESSION['id'] = $id;
+
+		        print_r($id);
+
+	
+
+	        $privatemessageRepository = new DatabaseTableRepository('PrivateMessage', 'privatemessags');
+
+
+
+	        
+
+	         $privatemessages = $privatemessageRepository->getAll();
+
+	        $argsArray = [
+	           
+	            'privatemessages' => $privatemessages,
+	            'id' => $id,
+	        ];
+
+	         $templateName = 'viewComments';
+        				return $app['twig']->render($templateName . '.html.twig', $argsArray);
+    }

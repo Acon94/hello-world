@@ -1,4 +1,5 @@
-{% extends '_base.html.twig' %}
+
+{% extends 'lecturer_base.html.twig' %}
 
 {# ------------------------------------------------- #}
 {% block pageTitle %}message edit page{% endblock %}
@@ -7,19 +8,17 @@
 {% block main %}
 
 <h1>
-Edit your message
+Edit your message HELLO
 </h1>
-
 
 <fieldset>
     <legend>Send us a message to say hi!</legend>
 
     <form
             method="post"
-            action="?action=processCVUpdateForm"
+            action="/processCVUpdateForm"
     >
-
-        <p>
+       <p>
             Name:
             <br>
             <input type="text" name="first" cols="40" rows="5" value="{{ student.first }}" required >
@@ -27,6 +26,7 @@ Edit your message
        	
        	Age : <input type="text" name="age" required value="{{ student.age }}">
        </p>
+   
 
         <p>
           GPA:
@@ -44,7 +44,7 @@ Edit your message
         <p>
             <input type="submit" value="update CV">
         </p>
-
+	
     </form>
 </fieldset>
 
