@@ -1,12 +1,26 @@
 <?php
 namespace Itb\Controller;
 
+
+
 use Itb\Model\User;
 use Itb\Model\Job;
+use fpdf;
 use Itb\Model\CV;
 use Itb\Model\DatabaseTableRepository;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
+/**
+ * Created in textpad
+ * User:Andrew B00069517
+ * Date: 26/01/2016
+ * Time: 10:44
+ *
+ * controlls the main actions
+ *
+ *
+ *
+ */
 
 class MainController
 {
@@ -72,11 +86,15 @@ class MainController
 		             	$_SESSION['username'] = $username;
 
 
-				          $dvdRepository = new DatabaseTableRepository('Dvd', 'students');
+				          $dvdRepository = new DatabaseTableRepository('Stydent', 'applicants');
+				          $jobRepository = new DatabaseTableRepository('Job', 'jobs');
+
 						  	        $dvds = $dvdRepository->getAll();
+						  	        $jobs = $jobRepository->getAll();
 
 						  	        $argsArray = [
 						  	            'dvds' => $dvds,
+						  	            'jobs' => $jobs,
 						  	        ];
 
 
@@ -96,7 +114,7 @@ class MainController
 
  										}
 
-					 		             $dvdRepository = new DatabaseTableRepository('Dvd', 'students');
+					 		             $dvdRepository = new DatabaseTableRepository('Stydent', 'students');
 										         $dvds = $dvdRepository->getAll();
 
 										         $argsArray = [
@@ -147,7 +165,10 @@ class MainController
 
 
 		         $jobrepo = new DatabaseTableRepository('Job', 'jobs');
+		         $cvrepository = new DatabaseTableRepository('CV', 'cvs');
+
 		         $jobs = $jobrepo->getAll();
+		         $cvs = $cvrepository->getOneById($id);
 
 
 
@@ -155,6 +176,8 @@ class MainController
 		         $argsArray = [
 		             'jobs' => $jobs,
 		             'id' => $id,
+		             'cvs' => $cvs,
+
 
 
 
@@ -193,6 +216,7 @@ class MainController
 
 
 			    $cvrepository = new DatabaseTableRepository('CV', 'cvs');
+			    $jobrepository = new DatabaseTableRepository('Job', 'jobs');
 
 					   	    $cvs = $cvrepository->getOneById($id);
 
@@ -314,7 +338,7 @@ class MainController
 	     */
 	    public function employerAction(\Twig_Environment $twig)
 	    {
-	        $dvdRepository = new DatabaseTableRepository('Dvd', 'students');
+	        $dvdRepository = new DatabaseTableRepository('Stydent', 'students');
 	        $dvds = $dvdRepository->getAll();
 
 	        $argsArray = [
@@ -328,7 +352,7 @@ class MainController
 
         public function studentsAction(Request $request, Application $app)
 		    {
-		        $dvdRepository = new DatabaseTableRepository('Dvd', 'students');
+		        $dvdRepository = new DatabaseTableRepository('Stydent', 'students');
 		        $dvds = $dvdRepository->getAll();
 
 		        $argsArray = [
@@ -346,7 +370,7 @@ class MainController
     {
         $searchText = filter_input(INPUT_POST, 'searchText', FILTER_SANITIZE_STRING);
 
-        $dvdRepository = new DatabaseTableRepository('Dvd', 'students');
+        $dvdRepository = new DatabaseTableRepository('Stydent', 'students');
         $dvds = $dvdRepository->searchByColumn('first', $searchText);
 
         $argsArray = [
@@ -403,22 +427,55 @@ class MainController
 	     */
 	public function cvdownloadAction(Request $request, Application $app ,$id)
 	    {
-	       $cvrepository = new DatabaseTableRepository('CV', 'cvs');
-		   	     $cvs = $cvrepository->getOneById($id);
+	       $applicationrepository = new DatabaseTableRepository('JobApp', ' applicants');
+		   	     $cvs = $applicationrepository->getOneById($id);
+
+
+
 
 
 		   		 		         $argsArray = [
 		   			 		             'cvs' => $cvs,
+		   			 		             'id' => $id,
+
 					 		         ];
 					 		         var_dump($cvs);
 
 					$objtext = serialize($cvs);
 
-					$first= $cvs->first;
 
-					$fp = fopen("testfile.txt", "a+");
-					fwrite($fp, $cvs->$first. "\r\n");
+					$first= $cvs->getFirst();
+					$surname = $cvs->getSurname();
+					$age = $cvs->getAge();
+					$address = $cvs->getAddress();
+					$gender = $cvs->getGender();
+					$experience = $cvs->getExperience();
+					$position = $cvs->getPosition();
+					$image = $cvs->getImage();
+
+					$fp = fopen("$first'sCV.txt", "a+");
+					fwrite($fp, $first ."\t". $surname ."\t\n". $age. "\t".$gender . "\t". $address  . "\t". $experience . "\t" . $image . "\t" . $position . "\r\n");
 					fclose($fp);
+
+
+
+					require('fpdf.php');
+
+					$pdf = new FPDF();
+					$pdf->AddPage();
+					$pdf->SetFont('Arial','B',16);
+					$pdf->Cell(40,10,$first);
+					$pdf->Cell(40,10,$surname);
+					$pdf->Cell(40,10,$age);
+					$pdf->Cell(40,10,$address);
+					$pdf->Cell(40,10,$gender);
+					$pdf->Cell(40,10,$experience);
+					$pdf->Cell(40,10,$position);
+					$pdf->Image('images/'. $image,30,30,-300);
+
+					$filename="$first'sCV.pdf";
+					$pdf->Output($filename,'F');
+
 
 
 	       					$templateName = 'cvdownload';

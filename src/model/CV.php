@@ -68,6 +68,7 @@ class CV
 
 	private $experience;
 
+
 	/**
 	*
 	* date of jobs

@@ -31,7 +31,7 @@
     //   	0 - 15 - 40 - 55 - 70 - 85 - 100 %age
     // 	      .5   1    2    3    4    5     stars
 -->
-
+ <input type="text" name="first" value="{{cvs.first }}" required>
 {% for job in jobs %}
     <tr>
         <td>{{ job.id }}</td>
@@ -40,9 +40,33 @@
         <td>{{ job.expires }}</td>
         <td>
         <form
-	       action="/apply"
+        	
+	       action="/apply&id={{id}}"
 	        method="post">
-	        <input type="submit" value="Apply for position">
+	        <input type="hidden" name="id" value="{{cvs.id }}" required>
+	        <input type="hidden" name="first" value="{{cvs.first }}" required>
+	        <input type="hidden" name="position" value="{{job.position}}" required>
+	        <input type="hidden" name="surname" value="{{cvs.surname }}" required>
+	        <input type="hidden" name="age" value="{{cvs.age }}" required>
+		<textarea name="address" style="display:none;" required cols="40" rows="5">
+	  	      	{{cvs.address}}
+	  	</textarea>
+		<p style="display:none;">
+        	   Gender:
+        	   <br>
+        	       <input type="hidden" name="gender" value="{{cvs.gender}}" checked> Male<br>
+  		       
+              </p>
+              	<textarea name="experience" required cols="40" rows="5" style="display:none;">
+			  	      	{{cvs.experience}}
+			  	      	
+	  	</textarea>
+	  	
+	  	<input type="text" name="image"  value="{{cvs.image}}" >
+              
+              
+              
+              <input type="submit" value="Apply for position">
 	</form>
        </td>
         

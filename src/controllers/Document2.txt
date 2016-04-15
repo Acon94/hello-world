@@ -1,0 +1,81 @@
+  public function createStudentsubmitAction(Request $request, Application $app)
+		{
+
+
+			//cv
+
+
+				 $age = filter_input(INPUT_POST, 'age', FILTER_SANITIZE_STRING);
+				 $address= filter_input(INPUT_POST, 'address', FILTER_SANITIZE_STRING);
+				 $gender= filter_input(INPUT_POST, 'gender', FILTER_SANITIZE_STRING);
+				 $experience= filter_input(INPUT_POST, 'experience', FILTER_SANITIZE_STRING);
+		         $image= filter_input(INPUT_POST, 'image', FILTER_SANITIZE_STRING);
+			// student
+			        $first = filter_input(INPUT_POST, 'first', FILTER_SANITIZE_STRING);
+			        $surname = filter_input(INPUT_POST, 'surname', FILTER_SANITIZE_STRING);
+			        $age = filter_input(INPUT_POST, 'age', FILTER_SANITIZE_STRING);
+			        $gpa = filter_input(INPUT_POST, 'gpa', FILTER_SANITIZE_STRING);
+			        $status = filter_input(INPUT_POST, 'status', FILTER_SANITIZE_STRING);
+					$id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
+
+
+			     //user
+			       	$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+			        $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+					$role = filter_input(INPUT_POST, 'role', FILTER_SANITIZE_STRING);
+
+
+				//cv object
+					$cv = new CV();
+					$cv->setFirst('Joe');
+					$cv->setSurname($surname);
+					$cv->setAge($age);
+					$cv->setAddress($address);
+					$cv->setGender($gender);
+					$cv->setExperience($experience);
+					$cv->setImage($image);
+					$cv->setId($id);
+
+
+				//create new user
+					$user = new User();
+					$user->setUsername($username);
+					$user->setPassword($password);
+					$user->setId($id);
+					$user->setRole($role);
+
+
+
+
+			        // create message object
+			        $student = new Student();
+
+				    $student->setId($id);
+			        $student->setFirst($first);
+			        $student->setSurname($surname);
+			        $student->setAge($age);
+			        $student->setGpa($gpa);
+       				$student->setStatus($status);
+
+	           // use MessageRepository to store new Message object
+	   //        $messageRepository = new MessageRepository();
+	           $messageRepository = new DatabaseTableRepository('Student', 'students');
+          	               $messageRepository->create($student);
+
+
+          	    $userRepository = new User();
+	           $userRepository = new DatabaseTableRepository('User', 'users');
+	           			$userRepository->create($user);
+
+	           			  $cvRepository = new CV();
+							           $cvRepository = new DatabaseTableRepository('CV', 'cvs');
+	           			$cvRepository->create($cv);
+
+				         $templateName = 'lecturer';
+
+        				return $app['twig']->render($templateName . '.html.twig');
+
+
+	       }
+
+	/**

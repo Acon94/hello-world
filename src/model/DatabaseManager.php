@@ -53,6 +53,11 @@ class DatabaseManager
      */
     private $error;
 
+    /**
+	* CONSTRUCT FUNCTION
+	* @var string
+    */
+
     public function __construct()
     {
         // DSN - the Data Source Name - requred by the PDO to connect
@@ -71,6 +76,11 @@ class DatabaseManager
             print  $e->getMessage();
         }
     }
+
+    /**
+	* GET DBH FUNCTION
+	* @var string
+    */
 
     public function getDbh()
     {

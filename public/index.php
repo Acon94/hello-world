@@ -16,6 +16,7 @@ $app->post('/editStudent&{id}', 'Itb\Controller\MessageController::studentEditAc
 $app->post('/privateMessage&{id}', 'Itb\Controller\MainController::privateCommentsAction');
 $app->get('/Viewprivatemessages&{id}', 'Itb\Controller\MessageController::viewPrivateMessagesAction');
 $app->post('/processCVUpdateForm', 'Itb\Controller\MessageController::updateCVAction');
+$app->post('/apply&{id}', 'Itb\Controller\MessageController::jobApplyAction');
 
 
 //redirect

@@ -27,7 +27,7 @@
        	        <p>
        	            posted by <strong>{{ privatemessage.user }}</strong>
        	            <br>
-       	            {{ privatemessage.timestamp|date("l jS M h:i:s A")  }}
+       	            {{ privatemessage.timestamp|date("l jS M h:i:s A", "Europe/Dublin" )}}
        	        </p>
        	    
        	        <blockquote>

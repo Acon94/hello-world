@@ -1,10 +1,22 @@
 <?php
+/**
+ * Created in textpad
+ * User:Andrew B00069517
+ * Date: 26/01/2016
+ * Time: 10:44
+ *
+ * controlls MessageActions
+ *
+ *
+ *
+ */
 namespace Itb\Controller;
 
 
 use Itb\Model\User;
 use Itb\Model\CV;
 use Itb\Model\Message;
+use Itb\Model\JobApp;
 use Itb\Model\PrivateMessage;
 use Itb\Model\Student;
 use Itb\Model\JobCreation;
@@ -12,9 +24,21 @@ use Itb\Model\DatabaseTableRepository;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * *
+ * Class MessageController - contol actions
+ *
+ *
+ *
+ */
+
 
 class MessageController
 {
+	/**
+	 * lecturer action
+	 * @param \Twig_Environment $twig
+	 */
 		 public function lecturerAction(\Twig_Environment $twig)
 			     {
 			         $jobrepo = new DatabaseTableRepository('Job', 'jobs');
@@ -28,6 +52,13 @@ class MessageController
 			         $htmlOutput = $twig->render($template . '.html.twig', $argsArray);
 			         print $htmlOutput;
 		     }
+
+	/**
+	 * comments Action
+	 * @param Request $request
+	 * @param Application $app
+	 * @return mixed
+	 */
 		     public function commentsAction(Request $request, Application $app)
 			 			     {
 			 			         $jobrepo = new DatabaseTableRepository('Job', 'jobs');
@@ -40,6 +71,12 @@ class MessageController
 			 			$templateName = 'viewComments';
         				return $app['twig']->render($templateName . '.html.twig', $argsArray);
 		     }
+
+	/**
+	 * messgaes
+	 * @param  $twig
+	 */
+
     public function messagesAction(\Twig_Environment $twig)
     {
 //        $messageRepository = new MessageRepository();
@@ -55,6 +92,14 @@ class MessageController
         $htmlOutput = $twig->render($template . '.html.twig', $argsArray);
         print $htmlOutput;
     }
+
+	/**
+	 * view comments action
+	 *
+	 * @param Request $request
+	 * @param Application $app
+	 * @return mixed
+	 */
        public function ViewCommentsAction(Request $request, Application $app)
 	    {
 
@@ -83,6 +128,14 @@ class MessageController
 	         $templateName = 'viewComments';
         				return $app['twig']->render($templateName . '.html.twig', $argsArray,$id);
     }
+
+	/**
+	 * view private messages
+	 *
+	 * @param Request $request
+	 * @param Application $app
+	 * @return mixed
+	 */
     public function viewPrivateMessagesAction(Request $request, Application $app)
 		    {
 
@@ -108,7 +161,12 @@ class MessageController
 	        				return $app['twig']->render($templateName . '.html.twig', $argsArray);
 	    }
 
-
+	/**
+	 * wfgerhet
+	 * @param \Twig_Environment $twig
+	 *
+	 *
+	 */
     public function messagesAsJSONAction(\Twig_Environment $twig)
     {
 //        $messageRepository = new MessageRepository();
@@ -124,6 +182,15 @@ class MessageController
         $htmlOutput = $twig->render($template . '.json.twig', $argsArray);
         print $htmlOutput;
     }
+
+	/**
+	 * cv submit action
+	 * @param Request $request
+	 * @param Application $app
+	 * @return mixed
+	 */
+
+
         public function cvsubmitAction(Request $request, Application $app)
 			{
 		   		   $first = filter_input(INPUT_POST, 'first', FILTER_SANITIZE_STRING);
@@ -163,6 +230,16 @@ class MessageController
 
 	       }
 
+	/**
+	 * Create student submit action
+	 *
+	 *
+	 * @param Request $request
+	 * @param Application $app
+	 * @return mixed
+	 *
+	 *
+	 */
      public function createStudentsubmitAction(Request $request, Application $app)
 		{
 
@@ -193,11 +270,11 @@ class MessageController
 				//cv object
 					$cv = new CV();
 					$cv->setFirst('Joe');
-					$cv->setSurname($surname);
+					$cv->setSurname('Bloggs');
 					$cv->setAge($age);
-					$cv->setAddress($address);
-					$cv->setGender($gender);
-					$cv->setExperience($experience);
+					$cv->setAddress('N/A');
+					$cv->setGender('N/A');
+					$cv->setExperience('N/a');
 					$cv->setImage($image);
 					$cv->setId($id);
 
@@ -222,6 +299,8 @@ class MessageController
 			        $student->setGpa($gpa);
        				$student->setStatus($status);
 
+
+
 	           // use MessageRepository to store new Message object
 	   //        $messageRepository = new MessageRepository();
 	           $messageRepository = new DatabaseTableRepository('Student', 'students');
@@ -236,17 +315,21 @@ class MessageController
 							           $cvRepository = new DatabaseTableRepository('CV', 'cvs');
 	           			$cvRepository->create($cv);
 
+
+
 				         $templateName = 'lecturer';
 
         				return $app['twig']->render($templateName . '.html.twig');
 
 
 	       }
-	       /*
-	       *huhuhu
-	       *
-	       *
-	       */
+
+	/**
+	 * comments submit action
+	 * @param Request $request
+	 * @param Application $app
+	 * @return mixed
+	 */
 	       public function commentsubmitAction(Request $request, Application $app)
 		       {
 		           // now sanitise with filter_var()
@@ -279,11 +362,13 @@ class MessageController
 		               $errorController->messagesAction($twig, $errorMessage);
 		           }
 		       }
-		       /*
-			   	       *huhuhu
-			   	       *
-			   	       *
-	       */
+
+	/**
+	 * privae comments action
+	 * @param Request $request
+	 * @param Application $app
+	 * @return mixed
+	 */
 		          public function privatecommentsubmitAction(Request $request, Application $app)
 			   		       {
 			   		           // now sanitise with filter_var()
@@ -322,6 +407,12 @@ print_r($reciver);
 			   		           }
 		       }
 
+	/**
+	 * submit action
+	 * @param Request $request
+	 * @param Application $app
+	 * @return mixed
+	 */
 
     public function submitAction(Request $request, Application $app)
     {
@@ -353,6 +444,12 @@ print_r($reciver);
         }
     }
 
+	/**
+	 * deleye action
+	 * @param Request $request
+	 * @param Application $app
+	 * @return mixed
+	 */
 
     public function deleteAction(Request $request, Application $app )
     {
@@ -378,6 +475,13 @@ print_r($reciver);
 
     }
 
+	/**
+	 * messageEditAction
+	 * @param Request $request
+	 * @param Application $app
+	 * @return mixed
+	 */
+
     public function messageEditAction(Request $request, Application $app)
     {
         // now sanitise with filter_var()
@@ -395,6 +499,13 @@ print_r($reciver);
 
         				return $app['twig']->render($templateName . '.html.twig');
     }
+
+	/**
+	 * edit student Action
+	 * @param Request $request
+	 * @param Application $app
+	 * @return mixed
+	 */
       public function studentEditAction(Request $request, Application $app )
 	    {
 	        // now sanitise with filter_var()
@@ -416,6 +527,13 @@ print_r($reciver);
 			$templateName = 'studentEdit';
  				return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
+
+	/**
+	 * crate student
+	 * @param Request $request
+	 * @param Application $app
+	 * @return mixed
+	 */
     public function createStudentAction(Request $request, Application $app)
 		    {
 
@@ -434,6 +552,74 @@ print_r($reciver);
 						$templateName = 'studentCreate';
         				return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
+    	/**
+		 * crate student
+		 * @param Request $request
+		 * @param Application $app
+		 * @return mixed
+		 */
+	    public function jobApplyAction(Request $request, Application $app,$id)
+			    {
+
+			    //cv
+								$id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING);
+								$first = filter_input(INPUT_POST, 'first', FILTER_SANITIZE_STRING);
+								$surname = filter_input(INPUT_POST, 'surname', FILTER_SANITIZE_STRING);
+								$age = filter_input(INPUT_POST, 'age', FILTER_SANITIZE_STRING);
+								$address= filter_input(INPUT_POST, 'address', FILTER_SANITIZE_STRING);
+								$gender= filter_input(INPUT_POST, 'gender', FILTER_SANITIZE_STRING);
+								$experience= filter_input(INPUT_POST, 'experience', FILTER_SANITIZE_STRING);
+								$position= filter_input(INPUT_POST, 'position', FILTER_SANITIZE_STRING);
+		         				$image= filter_input(INPUT_POST, 'image', FILTER_SANITIZE_STRING);
+
+
+
+						        $messageRepository = new DatabaseTableRepository('Student', 'students');
+						         $cvrepository = new DatabaseTableRepository('CV', 'cvs');
+
+						         $application = new JobApp();
+						         					$application->setId($id);
+								 					$application->setFirst($first);
+								 					$application->setSurname($surname);
+								 					$application->setAge($age);
+								 					$application->setAddress($address);
+								 					$application->setGender($gender);
+								 					$application->setPosition($position);
+								 					$application->setExperience($experience);
+								 					$application->setImage($image);
+
+
+
+
+
+
+
+						         $applicationRepository = new Application();
+								 $applicationRepository = new DatabaseTableRepository('Application', ' applicants');
+								 $applicationRepository->create($application);
+
+
+
+						        $student = $messageRepository->getAll();
+
+					   	    $cvs = $cvrepository->getOneById($id);
+
+						        $argsArray = [
+						            'student' => $student,
+						            'cvs' => $cvs,
+						            'id' => $id,
+
+
+						        ];
+
+							$templateName = 'applicationSent';
+	        				return $app['twig']->render($templateName . '.html.twig', $argsArray);
+    }
+
+	/**
+	 * unuded
+	 * @param $twig
+	 */
 
     public function updateAction($twig)
     {
@@ -464,6 +650,12 @@ print_r($reciver);
         }
     }
 
+	/**
+	 * update CV
+	 * @param Request $request
+	 * @param Application $app
+	 * @return mixed
+	 */
 
 
 public function updateCVAction(Request $request, Application $app)

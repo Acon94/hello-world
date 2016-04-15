@@ -1,13 +1,29 @@
 <?php
+/**
+ * this is the job repo file
+ */
 namespace Itb\Model;
+
+/**
+ * Class DvdRepository
+ * @package Itb\Model
+ */
 
 class DvdRepository extends DatabaseTableRepository
 {
+    /**
+     * DvdRepository constructor.
+     */
     public function __construct()
     {
         parent::__construct('Dvd', 'jobs');
     }
 
+    /**
+     * search fo specific
+     * @param $searchText
+     * @return mixed
+     */
     public function searchByTitleOrCategory($searchText)
     {
         $db = new DatabaseManager();

@@ -5,6 +5,17 @@ namespace Itb\Controller;
 use Itb\Model\User;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
+/**
+ * Created in textpad
+ * User:Andrew B00069517
+ * Date: 26/01/2016
+ * Time: 10:44
+ *
+ * controlls student actions
+ *
+ *
+ *
+ */
 
 class MainController
 {

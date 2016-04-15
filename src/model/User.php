@@ -93,47 +93,36 @@ class User extends DatabaseTable
     */
     public static function checkRole($username)
     {
-			$db = new DatabaseManager();
-			        $connection = $db->getDbh();
-
-			        $sql = 'SELECT role FROM users WHERE username=:username';
-			        $statement = $connection->prepare($sql);
-			         $statement->bindParam(':username', $username, \PDO::PARAM_STR);
-
-       		 $statement->execute();
-	    	 $role= $statement->fetch();
-
-
-
-
-
+		$db = new DatabaseManager();
+	    $connection = $db->getDbh();
+        $sql = 'SELECT role FROM users WHERE username=:username';
+	    $statement = $connection->prepare($sql);
+	    $statement->bindParam(':username', $username, \PDO::PARAM_STR);
+  		$statement->execute();
+	    $role= $statement->fetch();
     		return $role;
 
     }
-      /**
-	    *
-	    * function to get the id
-	    *
-	    */
-	    public static function retrieveID($username)
-	    {
-				$db = new DatabaseManager();
-				        $connection = $db->getDbh();
+    /**
+  	*
+	* function to get the id
+	*
+	*/
+	public static function retrieveID($username)
+		{
+			$db = new DatabaseManager();
+	        $connection = $db->getDbh();
+	        $sql = 'SELECT id FROM users WHERE username=:username';
+	        $statement = $connection->prepare($sql);
+	        $statement->bindParam(':username', $username, \PDO::PARAM_STR);
 
-				        $sql = 'SELECT id FROM users WHERE username=:username';
-				        $statement = $connection->prepare($sql);
-				         $statement->bindParam(':username', $username, \PDO::PARAM_STR);
-
-	       		 $statement->execute();
-		    	 $id= $statement->fetch();
-
-
-
+	   		$statement->execute();
+		    $id= $statement->fetch();
 
 
 	    		return $id;
 
-    }
+   		}
 
     /**
      * return success (or not) of attempting to find matching username/password in the repo

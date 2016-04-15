@@ -34,6 +34,7 @@ class Student
 
 
     /**
+     * returns id of student
      * @return int
      */
     public function getId()
@@ -41,23 +42,48 @@ class Student
         return $this->id;
     }
 
+    /**
+	* returns first name of student
+	* @return string
+    */
+
     public function getFirst()
-    {
-        return $this->first;
-    }
-     public function getSurname()
+    	{
+    	    return $this->first;
+    	}
+
+    /**
+	* returns id of student
+	* @return string
+    */
+
+    public function getSurname()
 	    {
 	        return $this->surname;
-    }
+    	}
 
-      public function getAge()
-    	    {
-    	        return $this->age;
-    }
+    /**
+	* 	returns id of student
+	* 	@return string
+    */
+
+    public function getAge()
+   	    {
+    	    return $this->age;
+  	    }
+    /**
+	* returns gpa of student
+	* @return string
+    */
     public function getGpa()
         {
             return $this->gpa;
-    }
+   		}
+
+   	/**
+	* returns employment status of student
+	* @return string
+    */
 
     public function getStatus()
     {
@@ -66,31 +92,31 @@ class Student
 
 
 
-     public function setFirst($first)
+   public function setFirst($first)
 	    {
-	        $this->first = $first;
-    }
+		        $this->first = $first;
+    	}
 
     public function setSurname($surname)
-		    {
+	    {
 		        $this->surname = $surname;
-    }
+    	}
     public function setAge($age)
-		    {
+	    {
 		        $this->age = $age;
-    }
+    	}
     public function setGpa($gpa)
-		    {
+	    {
 		        $this->gpa = $gpa;
-    }
+    	}
     public function setStatus($status)
-		    {
+		{
 		        $this->status = $status;
-    }
+    	}
     public function setId($id)
-			    {
-			        $this->id = $id;
-    }
+		{
+		        $this->id = $id;
+    	}
 
 
 

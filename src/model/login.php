@@ -1,4 +1,7 @@
 <?php
+/**
+ * login file
+ */
 	session_start();
 
 	$conn = new PDO('mysql:host=localhost;dbname=assighnment','root','');
