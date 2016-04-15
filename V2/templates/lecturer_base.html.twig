@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>EVOTE DVD - {% block pageTitle %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <style>
+       
+        @import "css/style.css";
+    </style>
+    <link rel="icon" 
+      type="image/png" 
+      href="/images/favicon.ico">
+</head>
+<body>
+
+<header>
+    <img src="images/gif" alt="logo">
+</header>
+
+<nav>
+    <ul>
+        <li>
+            <a href="/?action=CreateJob" class="{% block indexLinkStyle %}{% endblock %}">Job creeation</a>
+        </li>
+
+        
+        <li>
+            <a href="/?action=viewCVs" class="{% block sitemapLinkStyle %}{% endblock %}">View CVs</a>
+        </li>
+
+
+        <li >
+            <a href="/?action=Comments"  class="{% block messagesLinkStyle %}{% endblock %}">Comments</a>
+        </li>
+        
+         <li >
+	            <a href="/?action=students"  class="{% block studentLinkStyle %}{% endblock %}">Students</a>
+         </li>
+
+
+   
+
+    
+        <li id="login">
+            <a href="/?action=login"  class="{% block loginsLinkStyle %}{% endblock %}">Logout</a>
+        </li>
+
+    </ul>
+</nav>
+{% block main %}
+{% endblock %}
+
+
+	<div class ="footer">
+		
+		<p>
+			Andrew Connolly B00069517 Year 3
+			
+		
+		</p>
+	</div>
+
+</body>
+</html>

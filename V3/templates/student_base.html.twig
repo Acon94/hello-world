@@ -1,0 +1,78 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Job System {% block pageTitle %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <style>
+       
+        @import "css/style.css";
+    </style>
+    <link rel="icon" 
+      type="image/png" 
+      href="/images/favicon.ico">
+</head>
+<body>
+
+<header>
+    
+</header>
+
+<nav>
+
+    <ul>
+        <li>
+       
+            <a href="/cv&{{id}}"> My CV </a>
+     
+   </li>
+   <li>
+          
+               <a href="/Viewprivatemessages&{{id}}"> Inbox </a>
+        
+   </li>
+      
+        <li>
+            <a href="/job" class="{% block jobsLinkStyle %}{% endblock %}">jobs</a>
+        </li>
+        
+         <li>
+	    <a href="/viewComments" class="{% block commentsLinkStyle %}{% endblock %}">Comments</a>
+        </li>
+
+
+        <li id="login">
+            <a href="/?action=login"  class="{% block messagesLinkStyle %}{% endblock %}">Logout</a>
+        </li>
+        <li>
+        	<?php  echo $_SESSION['id']; ?>
+        
+        </li>
+        
+        	
+        <li>
+        	
+        	
+        </li>
+        
+	
+	   
+    </ul>
+</nav>
+
+{% block main %}
+{% endblock %}
+
+
+	<div class ="footer">
+		
+		<p>
+			
+			Andrew Connolly B00069517 Year 3  
+			
+		
+		</p>
+	</div>
+
+</body>
+</html>

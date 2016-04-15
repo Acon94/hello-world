@@ -1,0 +1,51 @@
+{% extends 'lecturer_base.html.twig' %}
+
+{# ------------------------------------------------- #}
+{% block pageTitle %}message edit page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block main %}
+
+<h1>
+Edit your message
+</h1>
+
+
+<fieldset>
+    <legend>Create a student</legend>
+
+    <form
+            method="post"
+            action="?action=processCVUpdateForm"
+    >
+
+        <p>
+            Name:
+            <br>
+            <input type="text" name="first" cols="40" rows="5" value="{{ student.first }}" required >
+       	    <input type="text" name="surname" required value="{{ student.surname }}" required>
+       	
+       	Age : <input type="text" name="age" required value="{{ student.age }}">
+       </p>
+
+        <p>
+          GPA:
+          
+            <input type="text" name="gpa" required value="{{ student.gpa }}">
+        </p>
+        <p>
+	          Employment Status:
+	          
+	            <input type="text" name="status" required value="{{ student.status }}">
+        </p>
+
+        <input type="hidden" name="id" value="{{ student.id }}">
+
+        <p>
+            <input type="submit" value="update CV">
+        </p>
+
+    </form>
+</fieldset>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+ public function getReciver()
+	    {
+	        return $this->reciver;
+    }
+     public function setReciver($reciver)
+	    {
+	        $this->reciver = $reciver;
+    }
+    
+    
+      /*
+    			   	       *huhuhu
+    			   	       *
+    			   	       *
+    	       */
+    		          public function privatecommentsubmitAction(Request $request, Application $app)
+    			   		       {
+    			   		           // now sanitise with filter_var()
+    			   		           $text = filter_input(INPUT_POST, 'text', FILTER_SANITIZE_STRING);
+    			   		           $user = filter_input(INPUT_POST, 'user', FILTER_SANITIZE_STRING);
+    			   		           $reciver = filter_input(INPUT_POST, 'reciver', FILTER_SANITIZE_STRING);
+    
+    
+    			   		             // get Unix timestamp for the current time
+    			   				   		           $now = new \DateTime();
+    			   				   		           $timestamp = $now->getTimestamp();
+    
+    
+    
+    			   		           // create message object
+    			   		           $comment = new Message();
+    			   		           $comment->setText($text);
+    			   		           $comment->setUser($user);
+    			   		           $comment->setReciver($reciver);
+    			   		           $comment->setTimestamp($timestamp);
+    
+    
+    			   		           // use MessageRepository to store new Message object
+    			   		   //        $messageRepository = new MessageRepository();
+    			   		           $messageRepository = new DatabaseTableRepository('Message', 'privatemessags');
+    			   		           if($messageRepository->create($comment)){
+    			   		              $templateName = 'lecturer';
+    
+    			           				return $app['twig']->render($templateName . '.html.twig');
+    			   		           } else {
+    			   		               $errorMessage = 'there was a problem adding your message to the database ...';
+    			   		               $errorController = new ErrorController();
+    			   		               $errorController->messagesAction($twig, $errorMessage);
+    			   		           }
+    		       }
+    

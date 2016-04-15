@@ -1,0 +1,46 @@
+{% extends 'lecturer_base.html.twig' %}
+
+{# ------------------------------------------------- #}
+{% block pageTitle %}Home page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block indexLinkStyle %}current_page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block main %}
+
+
+
+	<h1>Post a comment About CV's to a user</h1>
+
+
+<fieldset>
+    <legend>Send us a message to say hi!</legend>
+
+    <form
+            method="post"
+            action="/processPrivateMessageForm"
+    >
+
+        <p>
+            Your message:
+            <br>
+            <textarea name="text" cols="40" rows="5" required ></textarea>
+        </p>
+
+        <p>
+            Your name:
+            <br>
+            <input type="text" name="user" required >
+        </p>
+
+        <input type="text" name="reciver" value="{{id }}">
+
+        <p>
+            <input type="submit" value="send private message">
+        </p>
+
+    </form>
+</fieldset>
+
+{% endblock %}

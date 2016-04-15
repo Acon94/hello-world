@@ -1,0 +1,57 @@
+{% extends 'lecturer_base.html.twig' %}
+
+{# ------------------------------------------------- #}
+{% block pageTitle %}Home page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block indexLinkStyle %}current_page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block main %}
+
+
+
+<h1> WELCOME LECTURER </h1>
+<fieldset>
+    <legend>Send us a message to say hi!</legend>
+
+    <form
+            method="post"
+            action="/processJobsForm"
+    >
+
+        <p>
+            Job position:
+            <br>
+            <input type="text" name="position" required>
+        </p>
+         <p>
+	            Job location:
+	            <br>
+	           <input type="text" name="location" required>
+        </p>
+        <p>
+	      Job expires:
+	      <br>
+	      <input type="text" name="expires" required>
+        </p>
+          <p>
+		      user:
+		      <br>
+		      <input type="text" name="user" required>
+	        </p>
+
+
+        
+
+
+        <p>
+            <input type="submit" value="send message">
+        </p>
+
+    </form>
+</fieldset>
+	
+
+
+{% endblock %}

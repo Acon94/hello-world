@@ -1,0 +1,43 @@
+{% extends 'employer_base.html.twig' %}
+
+{# ------------------------------------------------- #}
+{% block pageTitle %}Details for one DVD{% endblock %}
+
+
+{# ------------------------------------------------- #}
+{% block main %}
+
+<!-- start table for displaying DVD details -->
+<h2>Details of one CV</h2>
+
+<table  border="1">
+    <tr>
+    	
+	<td><strong> Name:</strong> {{ cvs.first }}
+	{{ cvs.surname }}</td>
+	
+	<td><strong>  Age:</strong>{{ cvs.age }}</td>
+    </tr>
+
+    
+    
+    <tr>
+    	<td><strong>Address: </strong>{{ cvs.address }}</td>
+    </tr>
+    <tr>
+    
+    	 <td><strong>Experience:</strong>{{ cvs.experience }} </td>
+    </tr>
+    	
+   
+	<tr>
+	      <td>  <img src="images\{{cvs.image}}"> </td>
+        
+  
+   	</tr>
+
+    
+</table>
+
+
+{% endblock %}
