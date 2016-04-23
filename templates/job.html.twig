@@ -1,7 +1,7 @@
 {% extends 'student_base.html.twig' %}
 
 {# ------------------------------------------------- #}
-{% block pageTitle %}List DVDs page{% endblock %}
+{% block pageTitle %}Job{% endblock %}
 
 {# ------------------------------------------------- #}
 {% block jobsLinkStyle %}current_page{% endblock %}
@@ -32,12 +32,14 @@
     // 	      .5   1    2    3    4    5     stars
 -->
  <input type="text" name="first" value="{{cvs.first }}" required>
+ {{created}}
 {% for job in jobs %}
     <tr>
         <td>{{ job.id }}</td>
         <td>{{ job.position }}</td>
         <td>{{ job.location }}</td>
         <td>{{ job.expires }}</td>
+       
         <td>
         <form
         	
@@ -64,9 +66,13 @@
 	  	
 	  	<input type="text" name="image"  value="{{cvs.image}}" >
               
-              
+              {% if created < job.expires%}
               
               <input type="submit" value="Apply for position">
+              
+              {% else %}
+              <td> Position Colosed </td>
+              {% endif%}
 	</form>
        </td>
         

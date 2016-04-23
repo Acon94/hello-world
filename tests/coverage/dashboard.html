@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for C:\laragon\www\Assighnment2017\src</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/nv.d3.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="index.html">C:\laragon\www\Assighnment2017\src</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#10">TTFParser</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatabaseTable.php.html#11">DatabaseTable</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatabaseTableRepository.php.html#11">DatabaseTableRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatatbaseUtility.php.html#15">DatatbaseUtility</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#14">FPDF</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/StudentController.php.html#23">StudentController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/LoginController.php.html#22">LoginController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MainController.php.html#25">MainController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/ErrorController.php.html#25">ErrorController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MessageController.php.html#35">MessageController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/LecturerController.php.html#30">LecturerController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatabaseManager.php.html#18">DatabaseManager</a></td><td class="text-right">66%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="controllers/fpdf.php.html#14">FPDF</a></td><td class="text-right">179352</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#10">TTFParser</a></td><td class="text-right">15750</td></tr>
+       <tr><td><a href="controllers/MessageController.php.html#35">MessageController</a></td><td class="text-right">420</td></tr>
+       <tr><td><a href="model/DatabaseTableRepository.php.html#11">DatabaseTableRepository</a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="controllers/LecturerController.php.html#30">LecturerController</a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="model/DatabaseTable.php.html#11">DatabaseTable</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="model/DatatbaseUtility.php.html#15">DatatbaseUtility</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="controllers/LoginController.php.html#22">LoginController</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="controllers/ErrorController.php.html#25">ErrorController</a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="model/DatabaseManager.php.html#18">DatabaseManager</a></td><td class="text-right">3</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="controllers/fpdf.php.html#2525"><abbr title="FPDF::_putheader">_putheader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2533"><abbr title="FPDF::_puttrailer">_puttrailer</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2543"><abbr title="FPDF::_enddoc">_enddoc</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#128"><abbr title="TTFParser::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2501"><abbr title="FPDF::_putcatalog">_putcatalog</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2491"><abbr title="FPDF::_putinfo">_putinfo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2404"><abbr title="FPDF::_putimage">_putimage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2452"><abbr title="FPDF::_putxobjectdict">_putxobjectdict</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2461"><abbr title="FPDF::_putresourcedict">_putresourcedict</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2476"><abbr title="FPDF::_putresources">_putresources</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#138"><abbr title="TTFParser::__destruct">__destruct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#147"><abbr title="TTFParser::Parse">Parse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#252"><abbr title="TTFParser::ParseLoca">ParseLoca</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#275"><abbr title="TTFParser::ParseGlyf">ParseGlyf</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#317"><abbr title="TTFParser::ParseCmap">ParseCmap</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#389"><abbr title="TTFParser::ParseName">ParseName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#232"><abbr title="TTFParser::ParseHmtx">ParseHmtx</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#221"><abbr title="TTFParser::ParseMaxp">ParseMaxp</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#166"><abbr title="TTFParser::ParseOffsetTable">ParseOffsetTable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#190"><abbr title="TTFParser::ParseHead">ParseHead</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#211"><abbr title="TTFParser::ParseHhea">ParseHhea</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2390"><abbr title="FPDF::_putimages">_putimages</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2336"><abbr title="FPDF::_tounicodecmap">_tounicodecmap</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1814"><abbr title="FPDF::_parsejpg">_parsejpg</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1839"><abbr title="FPDF::_parsepng">_parsepng</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1857"><abbr title="FPDF::_parsepngstream">_parsepngstream</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1990"><abbr title="FPDF::_readstream">_readstream</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1798"><abbr title="FPDF::_dounderline">_dounderline</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1783"><abbr title="FPDF::_textstring">_textstring</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1713"><abbr title="FPDF::_httpencode">_httpencode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1731"><abbr title="FPDF::_UTF8toUTF16">_UTF8toUTF16</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1769"><abbr title="FPDF::_escape">_escape</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2012"><abbr title="FPDF::_readint">_readint</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2025"><abbr title="FPDF::_parsegif">_parsegif</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2115"><abbr title="FPDF::_putstreamobject">_putstreamobject</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2135"><abbr title="FPDF::_putpage">_putpage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2180"><abbr title="FPDF::_putpages">_putpages</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2214"><abbr title="FPDF::_putfonts">_putfonts</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2104"><abbr title="FPDF::_putstream">_putstream</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2091"><abbr title="FPDF::_newobj">_newobj</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2055"><abbr title="FPDF::_out">_out</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2072"><abbr title="FPDF::_put">_put</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2082"><abbr title="FPDF::_getoffset">_getoffset</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#421"><abbr title="TTFParser::ParseOS2">ParseOS2</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#447"><abbr title="TTFParser::ParsePost">ParsePost</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatabaseTable.php.html#152"><abbr title="DatabaseTable::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatabaseTableRepository.php.html#29"><abbr title="DatabaseTableRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatabaseTableRepository.php.html#39"><abbr title="DatabaseTableRepository::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatabaseTableRepository.php.html#64"><abbr title="DatabaseTableRepository::getCV">getCV</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatabaseTable.php.html#124"><abbr title="DatabaseTable::insert">insert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatabaseTable.php.html#99"><abbr title="DatabaseTable::searchByColumn">searchByColumn</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatabaseTable.php.html#37"><abbr title="DatabaseTable::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatabaseTable.php.html#57"><abbr title="DatabaseTable::getOneById">getOneById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatabaseTable.php.html#82"><abbr title="DatabaseTable::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatabaseTableRepository.php.html#90"><abbr title="DatabaseTableRepository::getOneById">getOneById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatabaseTableRepository.php.html#112"><abbr title="DatabaseTableRepository::getAllPrivate">getAllPrivate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatatbaseUtility.php.html#88"><abbr title="DatatbaseUtility::removeNamespacesFromKeys">removeNamespacesFromKeys</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatatbaseUtility.php.html#118"><abbr title="DatatbaseUtility::fieldListToInsertString">fieldListToInsertString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatatbaseUtility.php.html#135"><abbr title="DatatbaseUtility::fieldListToValuesString">fieldListToValuesString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatatbaseUtility.php.html#158"><abbr title="DatatbaseUtility::fieldListToUpdateString">fieldListToUpdateString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatatbaseUtility.php.html#43"><abbr title="DatatbaseUtility::objectToArrayLessId">objectToArrayLessId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatabaseTableRepository.php.html#214"><abbr title="DatabaseTableRepository::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatabaseTableRepository.php.html#141"><abbr title="DatabaseTableRepository::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatabaseTableRepository.php.html#159"><abbr title="DatabaseTableRepository::searchByColumn">searchByColumn</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatabaseTableRepository.php.html#184"><abbr title="DatabaseTableRepository::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/DatabaseTable.php.html#23"><abbr title="DatabaseTable::getTableName">getTableName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#935"><abbr title="TTFParser::Error">Error</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#653"><abbr title="TTFParser::BuildHmtx">BuildHmtx</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#667"><abbr title="TTFParser::BuildLoca">BuildLoca</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#689"><abbr title="TTFParser::BuildGlyf">BuildGlyf</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#715"><abbr title="TTFParser::BuildMaxp">BuildMaxp</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#642"><abbr title="TTFParser::BuildHhea">BuildHhea</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#554"><abbr title="TTFParser::BuildCmap">BuildCmap</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#493"><abbr title="TTFParser::Subset">Subset</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#520"><abbr title="TTFParser::AddGlyph">AddGlyph</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#539"><abbr title="TTFParser::Build">Build</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#726"><abbr title="TTFParser::BuildPost">BuildPost</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#765"><abbr title="TTFParser::BuildFont">BuildFont</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#883"><abbr title="TTFParser::ReadUShort">ReadUShort</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#893"><abbr title="TTFParser::ReadShort">ReadShort</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#906"><abbr title="TTFParser::ReadULong">ReadULong</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#917"><abbr title="TTFParser::CheckSum">CheckSum</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#874"><abbr title="TTFParser::Read">Read</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#864"><abbr title="TTFParser::Skip">Skip</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#822"><abbr title="TTFParser::LoadTable">LoadTable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#837"><abbr title="TTFParser::SetTable">SetTable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#853"><abbr title="TTFParser::Seek">Seek</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/ErrorController.php.html#36"><abbr title="ErrorController::errorAction">errorAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1694"><abbr title="FPDF::_isascii">_isascii</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MessageController.php.html#536"><abbr title="MessageController::updateAction">updateAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MessageController.php.html#575"><abbr title="MessageController::updateCVAction">updateCVAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/StudentController.php.html#34"><abbr title="StudentController::ViewCommentsAction">ViewCommentsAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/StudentController.php.html#68"><abbr title="StudentController::jobAction">jobAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MessageController.php.html#471"><abbr title="MessageController::jobApplyAction">jobApplyAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MessageController.php.html#442"><abbr title="MessageController::createStudentAction">createStudentAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MessageController.php.html#305"><abbr title="MessageController::privatecommentsubmitAction">privatecommentsubmitAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MessageController.php.html#354"><abbr title="MessageController::deleteAction">deleteAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MessageController.php.html#385"><abbr title="MessageController::messageEditAction">messageEditAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MessageController.php.html#409"><abbr title="MessageController::studentEditAction">studentEditAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/StudentController.php.html#119"><abbr title="StudentController::viewPrivateMessagesAction">viewPrivateMessagesAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/StudentController.php.html#156"><abbr title="StudentController::cvAction">cvAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#469"><abbr title="FPDF::SetAutoPageBreak">SetAutoPageBreak</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#483"><abbr title="FPDF::SetDisplayMode">SetDisplayMode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#500"><abbr title="FPDF::SetCompression">SetCompression</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#515"><abbr title="FPDF::SetTitle">SetTitle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#458"><abbr title="FPDF::SetRightMargin">SetRightMargin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#448"><abbr title="FPDF::SetTopMargin">SetTopMargin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#318"><abbr title="FPDF::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#422"><abbr title="FPDF::SetMargins">SetMargins</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#436"><abbr title="FPDF::SetLeftMargin">SetLeftMargin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MessageController.php.html#266"><abbr title="MessageController::commentsubmitAction">commentsubmitAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MessageController.php.html#176"><abbr title="MessageController::createStudentsubmitAction">createStudentsubmitAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/LecturerController.php.html#180"><abbr title="LecturerController::privateCommentsAction">privateCommentsAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/LecturerController.php.html#207"><abbr title="LecturerController::employAction">employAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/LecturerController.php.html#235"><abbr title="LecturerController::submitAction">submitAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/LoginController.php.html#31"><abbr title="LoginController::processLoginAction">processLoginAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/LecturerController.php.html#144"><abbr title="LecturerController::detailAction">detailAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/LecturerController.php.html#122"><abbr title="LecturerController::jobcreationAction">jobcreationAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/LecturerController.php.html#39"><abbr title="LecturerController::studentsAction">studentsAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/LecturerController.php.html#65"><abbr title="LecturerController::commentsAction">commentsAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/LecturerController.php.html#98"><abbr title="LecturerController::viewCVAction">viewCVAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MainController.php.html#33"><abbr title="MainController::loginAction">loginAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MainController.php.html#47"><abbr title="MainController::indexAction">indexAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MessageController.php.html#61"><abbr title="MessageController::commentsAction">commentsAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MessageController.php.html#79"><abbr title="MessageController::messagesAction">messagesAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MessageController.php.html#103"><abbr title="MessageController::messagesAsJSONAction">messagesAsJSONAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MessageController.php.html#127"><abbr title="MessageController::cvsubmitAction">cvsubmitAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MessageController.php.html#41"><abbr title="MessageController::lecturerAction">lecturerAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MainController.php.html#137"><abbr title="MainController::cvdownloadAction">cvdownloadAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MainController.php.html#65"><abbr title="MainController::listAction">listAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MainController.php.html#89"><abbr title="MainController::employerAction">employerAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/MainController.php.html#109"><abbr title="MainController::studentsAction">studentsAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1674"><abbr title="FPDF::_loadfont">_loadfont</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#527"><abbr title="FPDF::SetAuthor">SetAuthor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1311"><abbr title="FPDF::Ln">Ln</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1333"><abbr title="FPDF::Image">Image</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1402"><abbr title="FPDF::GetPageWidth">GetPageWidth</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1412"><abbr title="FPDF::GetPageHeight">GetPageHeight</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1223"><abbr title="FPDF::Write">Write</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1101"><abbr title="FPDF::MultiCell">MultiCell</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#962"><abbr title="FPDF::Link">Link</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#975"><abbr title="FPDF::Text">Text</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#992"><abbr title="FPDF::AcceptPageBreak">AcceptPageBreak</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1010"><abbr title="FPDF::Cell">Cell</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1422"><abbr title="FPDF::GetX">GetX</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1432"><abbr title="FPDF::SetX">SetX</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1561"><abbr title="FPDF::_checkoutput">_checkoutput</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1587"><abbr title="FPDF::_getpagesize">_getpagesize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1613"><abbr title="FPDF::_beginpage">_beginpage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1663"><abbr title="FPDF::_endpage">_endpage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1547"><abbr title="FPDF::_dochecks">_dochecks</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1487"><abbr title="FPDF::Output">Output</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1445"><abbr title="FPDF::GetY">GetY</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1456"><abbr title="FPDF::SetY">SetY</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1472"><abbr title="FPDF::SetXY">SetXY</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#538"><abbr title="FPDF::SetSubject">SetSubject</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#943"><abbr title="FPDF::SetLink">SetLink</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#614"><abbr title="FPDF::AddPage">AddPage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#686"><abbr title="FPDF::Header">Header</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#693"><abbr title="FPDF::Footer">Footer</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#702"><abbr title="FPDF::PageNo">PageNo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#590"><abbr title="FPDF::Close">Close</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#581"><abbr title="FPDF::Error">Error</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#549"><abbr title="FPDF::SetKeywords">SetKeywords</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#560"><abbr title="FPDF::SetCreator">SetCreator</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#570"><abbr title="FPDF::AliasNbPages">AliasNbPages</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#714"><abbr title="FPDF::SetDrawColor">SetDrawColor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#731"><abbr title="FPDF::SetFillColor">SetFillColor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#827"><abbr title="FPDF::AddFont">AddFont</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#859"><abbr title="FPDF::SetFont">SetFont</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#913"><abbr title="FPDF::SetFontSize">SetFontSize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#929"><abbr title="FPDF::AddLink">AddLink</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#809"><abbr title="FPDF::Rect">Rect</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#795"><abbr title="FPDF::Line">Line</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#749"><abbr title="FPDF::SetTextColor">SetTextColor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#764"><abbr title="FPDF::GetStringWidth">GetStringWidth</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#780"><abbr title="FPDF::SetLineWidth">SetLineWidth</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="model/User.php.html#165"><abbr title="User::canFindMatchingUsernameAndPassword">canFindMatchingUsernameAndPassword</abbr></a></td><td class="text-right">60%</td></tr>
+       <tr><td><a href="model/DatabaseManager.php.html#61"><abbr title="DatabaseManager::__construct">__construct</abbr></a></td><td class="text-right">63%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="controllers/fpdf.php.html#1857"><abbr title="FPDF::_parsepngstream">_parsepngstream</abbr></a></td><td class="text-right">870</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1010"><abbr title="FPDF::Cell">Cell</abbr></a></td><td class="text-right">812</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2214"><abbr title="FPDF::_putfonts">_putfonts</abbr></a></td><td class="text-right">756</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1101"><abbr title="FPDF::MultiCell">MultiCell</abbr></a></td><td class="text-right">756</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1333"><abbr title="FPDF::Image">Image</abbr></a></td><td class="text-right">420</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#317"><abbr title="TTFParser::ParseCmap">ParseCmap</abbr></a></td><td class="text-right">342</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#859"><abbr title="FPDF::SetFont">SetFont</abbr></a></td><td class="text-right">240</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#554"><abbr title="TTFParser::BuildCmap">BuildCmap</abbr></a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#318"><abbr title="FPDF::__construct">__construct</abbr></a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1613"><abbr title="FPDF::_beginpage">_beginpage</abbr></a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1223"><abbr title="FPDF::Write">Write</abbr></a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1487"><abbr title="FPDF::Output">Output</abbr></a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2404"><abbr title="FPDF::_putimage">_putimage</abbr></a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#614"><abbr title="FPDF::AddPage">AddPage</abbr></a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2135"><abbr title="FPDF::_putpage">_putpage</abbr></a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#483"><abbr title="FPDF::SetDisplayMode">SetDisplayMode</abbr></a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#765"><abbr title="TTFParser::BuildFont">BuildFont</abbr></a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#275"><abbr title="TTFParser::ParseGlyf">ParseGlyf</abbr></a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2501"><abbr title="FPDF::_putcatalog">_putcatalog</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#447"><abbr title="TTFParser::ParsePost">ParsePost</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1814"><abbr title="FPDF::_parsejpg">_parsejpg</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="controllers/LoginController.php.html#31"><abbr title="LoginController::processLoginAction">processLoginAction</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#827"><abbr title="FPDF::AddFont">AddFont</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#714"><abbr title="FPDF::SetDrawColor">SetDrawColor</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1674"><abbr title="FPDF::_loadfont">_loadfont</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#731"><abbr title="FPDF::SetFillColor">SetFillColor</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1990"><abbr title="FPDF::_readstream">_readstream</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1769"><abbr title="FPDF::_escape">_escape</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2025"><abbr title="FPDF::_parsegif">_parsegif</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2180"><abbr title="FPDF::_putpages">_putpages</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#252"><abbr title="TTFParser::ParseLoca">ParseLoca</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1561"><abbr title="FPDF::_checkoutput">_checkoutput</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2055"><abbr title="FPDF::_out">_out</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2336"><abbr title="FPDF::_tounicodecmap">_tounicodecmap</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#975"><abbr title="FPDF::Text">Text</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#749"><abbr title="FPDF::SetTextColor">SetTextColor</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#726"><abbr title="TTFParser::BuildPost">BuildPost</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1587"><abbr title="FPDF::_getpagesize">_getpagesize</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#689"><abbr title="TTFParser::BuildGlyf">BuildGlyf</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1713"><abbr title="FPDF::_httpencode">_httpencode</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#667"><abbr title="TTFParser::BuildLoca">BuildLoca</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1731"><abbr title="FPDF::_UTF8toUTF16">_UTF8toUTF16</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#520"><abbr title="TTFParser::AddGlyph">AddGlyph</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#166"><abbr title="TTFParser::ParseOffsetTable">ParseOffsetTable</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#389"><abbr title="TTFParser::ParseName">ParseName</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#809"><abbr title="FPDF::Rect">Rect</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#232"><abbr title="TTFParser::ParseHmtx">ParseHmtx</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#421"><abbr title="TTFParser::ParseOS2">ParseOS2</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#590"><abbr title="FPDF::Close">Close</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#493"><abbr title="TTFParser::Subset">Subset</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#913"><abbr title="FPDF::SetFontSize">SetFontSize</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1694"><abbr title="FPDF::_isascii">_isascii</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1547"><abbr title="FPDF::_dochecks">_dochecks</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1456"><abbr title="FPDF::SetY">SetY</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#943"><abbr title="FPDF::SetLink">SetLink</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#436"><abbr title="FPDF::SetLeftMargin">SetLeftMargin</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#893"><abbr title="TTFParser::ReadShort">ReadShort</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/LecturerController.php.html#235"><abbr title="LecturerController::submitAction">submitAction</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="model/DatabaseTableRepository.php.html#90"><abbr title="DatabaseTableRepository::getOneById">getOneById</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="model/DatabaseTableRepository.php.html#184"><abbr title="DatabaseTableRepository::create">create</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="model/DatatbaseUtility.php.html#88"><abbr title="DatatbaseUtility::removeNamespacesFromKeys">removeNamespacesFromKeys</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="model/DatatbaseUtility.php.html#158"><abbr title="DatatbaseUtility::fieldListToUpdateString">fieldListToUpdateString</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/MessageController.php.html#266"><abbr title="MessageController::commentsubmitAction">commentsubmitAction</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="model/DatatbaseUtility.php.html#135"><abbr title="DatatbaseUtility::fieldListToValuesString">fieldListToValuesString</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#874"><abbr title="TTFParser::Read">Read</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/LecturerController.php.html#144"><abbr title="LecturerController::detailAction">detailAction</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/LecturerController.php.html#65"><abbr title="LecturerController::commentsAction">commentsAction</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#822"><abbr title="TTFParser::LoadTable">LoadTable</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#837"><abbr title="TTFParser::SetTable">SetTable</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#853"><abbr title="TTFParser::Seek">Seek</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#764"><abbr title="FPDF::GetStringWidth">GetStringWidth</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#653"><abbr title="TTFParser::BuildHmtx">BuildHmtx</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="model/DatabaseTable.php.html#124"><abbr title="DatabaseTable::insert">insert</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#917"><abbr title="TTFParser::CheckSum">CheckSum</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="model/DatabaseTable.php.html#57"><abbr title="DatabaseTable::getOneById">getOneById</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/MessageController.php.html#305"><abbr title="MessageController::privatecommentsubmitAction">privatecommentsubmitAction</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1839"><abbr title="FPDF::_parsepng">_parsepng</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/ErrorController.php.html#36"><abbr title="ErrorController::errorAction">errorAction</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#422"><abbr title="FPDF::SetMargins">SetMargins</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#560"><abbr title="FPDF::SetCreator">SetCreator</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2091"><abbr title="FPDF::_newobj">_newobj</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1783"><abbr title="FPDF::_textstring">_textstring</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#549"><abbr title="FPDF::SetKeywords">SetKeywords</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1311"><abbr title="FPDF::Ln">Ln</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#527"><abbr title="FPDF::SetAuthor">SetAuthor</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#515"><abbr title="FPDF::SetTitle">SetTitle</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#1432"><abbr title="FPDF::SetX">SetX</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#500"><abbr title="FPDF::SetCompression">SetCompression</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#190"><abbr title="TTFParser::ParseHead">ParseHead</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2115"><abbr title="FPDF::_putstreamobject">_putstreamobject</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#538"><abbr title="FPDF::SetSubject">SetSubject</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2491"><abbr title="FPDF::_putinfo">_putinfo</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2543"><abbr title="FPDF::_enddoc">_enddoc</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#128"><abbr title="TTFParser::__construct">__construct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/makefont/ttfparser.php.html#138"><abbr title="TTFParser::__destruct">__destruct</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2461"><abbr title="FPDF::_putresourcedict">_putresourcedict</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2452"><abbr title="FPDF::_putxobjectdict">_putxobjectdict</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/MessageController.php.html#536"><abbr title="MessageController::updateAction">updateAction</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#780"><abbr title="FPDF::SetLineWidth">SetLineWidth</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/MessageController.php.html#575"><abbr title="MessageController::updateCVAction">updateCVAction</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/fpdf.php.html#2390"><abbr title="FPDF::_putimages">_putimages</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="controllers/MessageController.php.html#354"><abbr title="MessageController::deleteAction">deleteAction</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="model/User.php.html#165"><abbr title="User::canFindMatchingUsernameAndPassword">canFindMatchingUsernameAndPassword</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="model/DatabaseManager.php.html#61"><abbr title="DatabaseManager::__construct">__construct</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 3.0.1</a> using <a href="http://php.net/" target="_top">PHP 5.6.16</a> and <a href="http://phpunit.de/">PHPUnit 5.0.8</a> at Thu Apr 21 4:34:58 PDT 2016.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="js/jquery.min.js" type="text/javascript"></script>
+  <script src="js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/holder.min.js" type="text/javascript"></script>
+  <script src="js/d3.min.js" type="text/javascript"></script>
+  <script src="js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([11,0,0,0,0,0,0,1,0,0,1,8], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([177,0,0,0,0,0,0,2,0,0,1,92], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,2,"<a href=\"controllers\/ErrorController.php.html#25\">ErrorController<\/a>"],[0,11,"<a href=\"controllers\/LecturerController.php.html#30\">LecturerController<\/a>"],[0,7,"<a href=\"controllers\/LoginController.php.html#22\">LoginController<\/a>"],[0,6,"<a href=\"controllers\/MainController.php.html#25\">MainController<\/a>"],[0,20,"<a href=\"controllers\/MessageController.php.html#35\">MessageController<\/a>"],[0,4,"<a href=\"controllers\/StudentController.php.html#23\">StudentController<\/a>"],[0,423,"<a href=\"controllers\/fpdf.php.html#14\">FPDF<\/a>"],[0,125,"<a href=\"controllers\/makefont\/ttfparser.php.html#10\">TTFParser<\/a>"],[100,16,"<a href=\"model\/CV.php.html#18\">CV<\/a>"],[66.666666666667,3,"<a href=\"model\/DatabaseManager.php.html#18\">DatabaseManager<\/a>"],[0,9,"<a href=\"model\/DatabaseTable.php.html#11\">DatabaseTable<\/a>"],[0,11,"<a href=\"model\/DatabaseTableRepository.php.html#11\">DatabaseTableRepository<\/a>"],[0,8,"<a href=\"model\/DatatbaseUtility.php.html#15\">DatatbaseUtility<\/a>"],[100,4,"<a href=\"model\/Job.php.html#21\">Job<\/a>"],[100,18,"<a href=\"model\/JobApp.php.html#20\">JobApp<\/a>"],[100,11,"<a href=\"model\/JobCreation.php.html#11\">JobCreation<\/a>"],[100,7,"<a href=\"model\/Message.php.html#13\">Message<\/a>"],[100,9,"<a href=\"model\/PrivateMessage.php.html#12\">PrivateMessage<\/a>"],[100,12,"<a href=\"model\/Student.php.html#11\">Student<\/a>"],[100,4,"<a href=\"model\/Stydent.php.html#10\">Stydent<\/a>"],[93.181818181818,14,"<a href=\"model\/User.php.html#15\">User<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,2,"<a href=\"controllers\/ErrorController.php.html#36\">ErrorController::errorAction<\/a>"],[0,1,"<a href=\"controllers\/LecturerController.php.html#39\">LecturerController::studentsAction<\/a>"],[0,2,"<a href=\"controllers\/LecturerController.php.html#65\">LecturerController::commentsAction<\/a>"],[0,1,"<a href=\"controllers\/LecturerController.php.html#98\">LecturerController::viewCVAction<\/a>"],[0,1,"<a href=\"controllers\/LecturerController.php.html#122\">LecturerController::jobcreationAction<\/a>"],[0,2,"<a href=\"controllers\/LecturerController.php.html#144\">LecturerController::detailAction<\/a>"],[0,1,"<a href=\"controllers\/LecturerController.php.html#180\">LecturerController::privateCommentsAction<\/a>"],[0,1,"<a href=\"controllers\/LecturerController.php.html#207\">LecturerController::employAction<\/a>"],[0,2,"<a href=\"controllers\/LecturerController.php.html#235\">LecturerController::submitAction<\/a>"],[0,7,"<a href=\"controllers\/LoginController.php.html#31\">LoginController::processLoginAction<\/a>"],[0,1,"<a href=\"controllers\/MainController.php.html#33\">MainController::loginAction<\/a>"],[0,1,"<a href=\"controllers\/MainController.php.html#47\">MainController::indexAction<\/a>"],[0,1,"<a href=\"controllers\/MainController.php.html#65\">MainController::listAction<\/a>"],[0,1,"<a href=\"controllers\/MainController.php.html#89\">MainController::employerAction<\/a>"],[0,1,"<a href=\"controllers\/MainController.php.html#109\">MainController::studentsAction<\/a>"],[0,1,"<a href=\"controllers\/MainController.php.html#137\">MainController::cvdownloadAction<\/a>"],[0,1,"<a href=\"controllers\/MessageController.php.html#41\">MessageController::lecturerAction<\/a>"],[0,1,"<a href=\"controllers\/MessageController.php.html#61\">MessageController::commentsAction<\/a>"],[0,1,"<a href=\"controllers\/MessageController.php.html#79\">MessageController::messagesAction<\/a>"],[0,1,"<a href=\"controllers\/MessageController.php.html#103\">MessageController::messagesAsJSONAction<\/a>"],[0,1,"<a href=\"controllers\/MessageController.php.html#127\">MessageController::cvsubmitAction<\/a>"],[0,1,"<a href=\"controllers\/MessageController.php.html#176\">MessageController::createStudentsubmitAction<\/a>"],[0,2,"<a href=\"controllers\/MessageController.php.html#266\">MessageController::commentsubmitAction<\/a>"],[0,2,"<a href=\"controllers\/MessageController.php.html#305\">MessageController::privatecommentsubmitAction<\/a>"],[0,2,"<a href=\"controllers\/MessageController.php.html#354\">MessageController::deleteAction<\/a>"],[0,1,"<a href=\"controllers\/MessageController.php.html#385\">MessageController::messageEditAction<\/a>"],[0,1,"<a href=\"controllers\/MessageController.php.html#409\">MessageController::studentEditAction<\/a>"],[0,1,"<a href=\"controllers\/MessageController.php.html#442\">MessageController::createStudentAction<\/a>"],[0,1,"<a href=\"controllers\/MessageController.php.html#471\">MessageController::jobApplyAction<\/a>"],[0,2,"<a href=\"controllers\/MessageController.php.html#536\">MessageController::updateAction<\/a>"],[0,2,"<a href=\"controllers\/MessageController.php.html#575\">MessageController::updateCVAction<\/a>"],[0,1,"<a href=\"controllers\/StudentController.php.html#34\">StudentController::ViewCommentsAction<\/a>"],[0,1,"<a href=\"controllers\/StudentController.php.html#68\">StudentController::jobAction<\/a>"],[0,1,"<a href=\"controllers\/StudentController.php.html#119\">StudentController::viewPrivateMessagesAction<\/a>"],[0,1,"<a href=\"controllers\/StudentController.php.html#156\">StudentController::cvAction<\/a>"],[0,13,"<a href=\"controllers\/fpdf.php.html#318\">FPDF::__construct<\/a>"],[0,2,"<a href=\"controllers\/fpdf.php.html#422\">FPDF::SetMargins<\/a>"],[0,3,"<a href=\"controllers\/fpdf.php.html#436\">FPDF::SetLeftMargin<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#448\">FPDF::SetTopMargin<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#458\">FPDF::SetRightMargin<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#469\">FPDF::SetAutoPageBreak<\/a>"],[0,10,"<a href=\"controllers\/fpdf.php.html#483\">FPDF::SetDisplayMode<\/a>"],[0,2,"<a href=\"controllers\/fpdf.php.html#500\">FPDF::SetCompression<\/a>"],[0,2,"<a href=\"controllers\/fpdf.php.html#515\">FPDF::SetTitle<\/a>"],[0,2,"<a href=\"controllers\/fpdf.php.html#527\">FPDF::SetAuthor<\/a>"],[0,2,"<a href=\"controllers\/fpdf.php.html#538\">FPDF::SetSubject<\/a>"],[0,2,"<a href=\"controllers\/fpdf.php.html#549\">FPDF::SetKeywords<\/a>"],[0,2,"<a href=\"controllers\/fpdf.php.html#560\">FPDF::SetCreator<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#570\">FPDF::AliasNbPages<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#581\">FPDF::Error<\/a>"],[0,3,"<a href=\"controllers\/fpdf.php.html#590\">FPDF::Close<\/a>"],[0,11,"<a href=\"controllers\/fpdf.php.html#614\">FPDF::AddPage<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#686\">FPDF::Header<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#693\">FPDF::Footer<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#702\">FPDF::PageNo<\/a>"],[0,6,"<a href=\"controllers\/fpdf.php.html#714\">FPDF::SetDrawColor<\/a>"],[0,6,"<a href=\"controllers\/fpdf.php.html#731\">FPDF::SetFillColor<\/a>"],[0,5,"<a href=\"controllers\/fpdf.php.html#749\">FPDF::SetTextColor<\/a>"],[0,2,"<a href=\"controllers\/fpdf.php.html#764\">FPDF::GetStringWidth<\/a>"],[0,2,"<a href=\"controllers\/fpdf.php.html#780\">FPDF::SetLineWidth<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#795\">FPDF::Line<\/a>"],[0,4,"<a href=\"controllers\/fpdf.php.html#809\">FPDF::Rect<\/a>"],[0,6,"<a href=\"controllers\/fpdf.php.html#827\">FPDF::AddFont<\/a>"],[0,15,"<a href=\"controllers\/fpdf.php.html#859\">FPDF::SetFont<\/a>"],[0,3,"<a href=\"controllers\/fpdf.php.html#913\">FPDF::SetFontSize<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#929\">FPDF::AddLink<\/a>"],[0,3,"<a href=\"controllers\/fpdf.php.html#943\">FPDF::SetLink<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#962\">FPDF::Link<\/a>"],[0,5,"<a href=\"controllers\/fpdf.php.html#975\">FPDF::Text<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#992\">FPDF::AcceptPageBreak<\/a>"],[0,28,"<a href=\"controllers\/fpdf.php.html#1010\">FPDF::Cell<\/a>"],[0,27,"<a href=\"controllers\/fpdf.php.html#1101\">FPDF::MultiCell<\/a>"],[0,12,"<a href=\"controllers\/fpdf.php.html#1223\">FPDF::Write<\/a>"],[0,2,"<a href=\"controllers\/fpdf.php.html#1311\">FPDF::Ln<\/a>"],[0,20,"<a href=\"controllers\/fpdf.php.html#1333\">FPDF::Image<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#1402\">FPDF::GetPageWidth<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#1412\">FPDF::GetPageHeight<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#1422\">FPDF::GetX<\/a>"],[0,2,"<a href=\"controllers\/fpdf.php.html#1432\">FPDF::SetX<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#1445\">FPDF::GetY<\/a>"],[0,3,"<a href=\"controllers\/fpdf.php.html#1456\">FPDF::SetY<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#1472\">FPDF::SetXY<\/a>"],[0,11,"<a href=\"controllers\/fpdf.php.html#1487\">FPDF::Output<\/a>"],[0,3,"<a href=\"controllers\/fpdf.php.html#1547\">FPDF::_dochecks<\/a>"],[0,5,"<a href=\"controllers\/fpdf.php.html#1561\">FPDF::_checkoutput<\/a>"],[0,4,"<a href=\"controllers\/fpdf.php.html#1587\">FPDF::_getpagesize<\/a>"],[0,12,"<a href=\"controllers\/fpdf.php.html#1613\">FPDF::_beginpage<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#1663\">FPDF::_endpage<\/a>"],[0,6,"<a href=\"controllers\/fpdf.php.html#1674\">FPDF::_loadfont<\/a>"],[0,3,"<a href=\"controllers\/fpdf.php.html#1694\">FPDF::_isascii<\/a>"],[0,4,"<a href=\"controllers\/fpdf.php.html#1713\">FPDF::_httpencode<\/a>"],[0,4,"<a href=\"controllers\/fpdf.php.html#1731\">FPDF::_UTF8toUTF16<\/a>"],[0,5,"<a href=\"controllers\/fpdf.php.html#1769\">FPDF::_escape<\/a>"],[0,2,"<a href=\"controllers\/fpdf.php.html#1783\">FPDF::_textstring<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#1798\">FPDF::_dounderline<\/a>"],[0,7,"<a href=\"controllers\/fpdf.php.html#1814\">FPDF::_parsejpg<\/a>"],[0,2,"<a href=\"controllers\/fpdf.php.html#1839\">FPDF::_parsepng<\/a>"],[0,29,"<a href=\"controllers\/fpdf.php.html#1857\">FPDF::_parsepngstream<\/a>"],[0,5,"<a href=\"controllers\/fpdf.php.html#1990\">FPDF::_readstream<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#2012\">FPDF::_readint<\/a>"],[0,5,"<a href=\"controllers\/fpdf.php.html#2025\">FPDF::_parsegif<\/a>"],[0,5,"<a href=\"controllers\/fpdf.php.html#2055\">FPDF::_out<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#2072\">FPDF::_put<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#2082\">FPDF::_getoffset<\/a>"],[0,2,"<a href=\"controllers\/fpdf.php.html#2091\">FPDF::_newobj<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#2104\">FPDF::_putstream<\/a>"],[0,2,"<a href=\"controllers\/fpdf.php.html#2115\">FPDF::_putstreamobject<\/a>"],[0,10,"<a href=\"controllers\/fpdf.php.html#2135\">FPDF::_putpage<\/a>"],[0,5,"<a href=\"controllers\/fpdf.php.html#2180\">FPDF::_putpages<\/a>"],[0,27,"<a href=\"controllers\/fpdf.php.html#2214\">FPDF::_putfonts<\/a>"],[0,5,"<a href=\"controllers\/fpdf.php.html#2336\">FPDF::_tounicodecmap<\/a>"],[0,2,"<a href=\"controllers\/fpdf.php.html#2390\">FPDF::_putimages<\/a>"],[0,11,"<a href=\"controllers\/fpdf.php.html#2404\">FPDF::_putimage<\/a>"],[0,2,"<a href=\"controllers\/fpdf.php.html#2452\">FPDF::_putxobjectdict<\/a>"],[0,2,"<a href=\"controllers\/fpdf.php.html#2461\">FPDF::_putresourcedict<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#2476\">FPDF::_putresources<\/a>"],[0,2,"<a href=\"controllers\/fpdf.php.html#2491\">FPDF::_putinfo<\/a>"],[0,8,"<a href=\"controllers\/fpdf.php.html#2501\">FPDF::_putcatalog<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#2525\">FPDF::_putheader<\/a>"],[0,1,"<a href=\"controllers\/fpdf.php.html#2533\">FPDF::_puttrailer<\/a>"],[0,2,"<a href=\"controllers\/fpdf.php.html#2543\">FPDF::_enddoc<\/a>"],[0,2,"<a href=\"controllers\/makefont\/ttfparser.php.html#128\">TTFParser::__construct<\/a>"],[0,2,"<a href=\"controllers\/makefont\/ttfparser.php.html#138\">TTFParser::__destruct<\/a>"],[0,1,"<a href=\"controllers\/makefont\/ttfparser.php.html#147\">TTFParser::Parse<\/a>"],[0,4,"<a href=\"controllers\/makefont\/ttfparser.php.html#166\">TTFParser::ParseOffsetTable<\/a>"],[0,2,"<a href=\"controllers\/makefont\/ttfparser.php.html#190\">TTFParser::ParseHead<\/a>"],[0,1,"<a href=\"controllers\/makefont\/ttfparser.php.html#211\">TTFParser::ParseHhea<\/a>"],[0,1,"<a href=\"controllers\/makefont\/ttfparser.php.html#221\">TTFParser::ParseMaxp<\/a>"],[0,3,"<a href=\"controllers\/makefont\/ttfparser.php.html#232\">TTFParser::ParseHmtx<\/a>"],[0,5,"<a href=\"controllers\/makefont\/ttfparser.php.html#252\">TTFParser::ParseLoca<\/a>"],[0,9,"<a href=\"controllers\/makefont\/ttfparser.php.html#275\">TTFParser::ParseGlyf<\/a>"],[0,18,"<a href=\"controllers\/makefont\/ttfparser.php.html#317\">TTFParser::ParseCmap<\/a>"],[0,4,"<a href=\"controllers\/makefont\/ttfparser.php.html#389\">TTFParser::ParseName<\/a>"],[0,3,"<a href=\"controllers\/makefont\/ttfparser.php.html#421\">TTFParser::ParseOS2<\/a>"],[0,8,"<a href=\"controllers\/makefont\/ttfparser.php.html#447\">TTFParser::ParsePost<\/a>"],[0,3,"<a href=\"controllers\/makefont\/ttfparser.php.html#493\">TTFParser::Subset<\/a>"],[0,4,"<a href=\"controllers\/makefont\/ttfparser.php.html#520\">TTFParser::AddGlyph<\/a>"],[0,1,"<a href=\"controllers\/makefont\/ttfparser.php.html#539\">TTFParser::Build<\/a>"],[0,13,"<a href=\"controllers\/makefont\/ttfparser.php.html#554\">TTFParser::BuildCmap<\/a>"],[0,1,"<a href=\"controllers\/makefont\/ttfparser.php.html#642\">TTFParser::BuildHhea<\/a>"],[0,2,"<a href=\"controllers\/makefont\/ttfparser.php.html#653\">TTFParser::BuildHmtx<\/a>"],[0,4,"<a href=\"controllers\/makefont\/ttfparser.php.html#667\">TTFParser::BuildLoca<\/a>"],[0,4,"<a href=\"controllers\/makefont\/ttfparser.php.html#689\">TTFParser::BuildGlyf<\/a>"],[0,1,"<a href=\"controllers\/makefont\/ttfparser.php.html#715\">TTFParser::BuildMaxp<\/a>"],[0,4,"<a href=\"controllers\/makefont\/ttfparser.php.html#726\">TTFParser::BuildPost<\/a>"],[0,9,"<a href=\"controllers\/makefont\/ttfparser.php.html#765\">TTFParser::BuildFont<\/a>"],[0,2,"<a href=\"controllers\/makefont\/ttfparser.php.html#822\">TTFParser::LoadTable<\/a>"],[0,2,"<a href=\"controllers\/makefont\/ttfparser.php.html#837\">TTFParser::SetTable<\/a>"],[0,2,"<a href=\"controllers\/makefont\/ttfparser.php.html#853\">TTFParser::Seek<\/a>"],[0,1,"<a href=\"controllers\/makefont\/ttfparser.php.html#864\">TTFParser::Skip<\/a>"],[0,2,"<a href=\"controllers\/makefont\/ttfparser.php.html#874\">TTFParser::Read<\/a>"],[0,1,"<a href=\"controllers\/makefont\/ttfparser.php.html#883\">TTFParser::ReadUShort<\/a>"],[0,2,"<a href=\"controllers\/makefont\/ttfparser.php.html#893\">TTFParser::ReadShort<\/a>"],[0,1,"<a href=\"controllers\/makefont\/ttfparser.php.html#906\">TTFParser::ReadULong<\/a>"],[0,2,"<a href=\"controllers\/makefont\/ttfparser.php.html#917\">TTFParser::CheckSum<\/a>"],[0,1,"<a href=\"controllers\/makefont\/ttfparser.php.html#935\">TTFParser::Error<\/a>"],[100,1,"<a href=\"model\/CV.php.html#88\">CV::getId<\/a>"],[100,1,"<a href=\"model\/CV.php.html#98\">CV::getFirst<\/a>"],[100,1,"<a href=\"model\/CV.php.html#108\">CV::getSurname<\/a>"],[100,1,"<a href=\"model\/CV.php.html#118\">CV::getAge<\/a>"],[100,1,"<a href=\"model\/CV.php.html#127\">CV::getAddress<\/a>"],[100,1,"<a href=\"model\/CV.php.html#137\">CV::getGender<\/a>"],[100,1,"<a href=\"model\/CV.php.html#146\">CV::getExperience<\/a>"],[100,1,"<a href=\"model\/CV.php.html#157\">CV::getImage<\/a>"],[100,1,"<a href=\"model\/CV.php.html#166\">CV::setId<\/a>"],[100,1,"<a href=\"model\/CV.php.html#175\">CV::setFirst<\/a>"],[100,1,"<a href=\"model\/CV.php.html#184\">CV::setSurname<\/a>"],[100,1,"<a href=\"model\/CV.php.html#193\">CV::setAge<\/a>"],[100,1,"<a href=\"model\/CV.php.html#202\">CV::setAddress<\/a>"],[100,1,"<a href=\"model\/CV.php.html#211\">CV::setGender<\/a>"],[100,1,"<a href=\"model\/CV.php.html#220\">CV::setExperience<\/a>"],[100,1,"<a href=\"model\/CV.php.html#229\">CV::setImage<\/a>"],[63.636363636364,2,"<a href=\"model\/DatabaseManager.php.html#61\">DatabaseManager::__construct<\/a>"],[100,1,"<a href=\"model\/DatabaseManager.php.html#85\">DatabaseManager::getDbh<\/a>"],[0,1,"<a href=\"model\/DatabaseTable.php.html#23\">DatabaseTable::getTableName<\/a>"],[0,1,"<a href=\"model\/DatabaseTable.php.html#37\">DatabaseTable::getAll<\/a>"],[0,2,"<a href=\"model\/DatabaseTable.php.html#57\">DatabaseTable::getOneById<\/a>"],[0,1,"<a href=\"model\/DatabaseTable.php.html#82\">DatabaseTable::delete<\/a>"],[0,1,"<a href=\"model\/DatabaseTable.php.html#99\">DatabaseTable::searchByColumn<\/a>"],[0,2,"<a href=\"model\/DatabaseTable.php.html#124\">DatabaseTable::insert<\/a>"],[0,1,"<a href=\"model\/DatabaseTable.php.html#152\">DatabaseTable::update<\/a>"],[0,1,"<a href=\"model\/DatabaseTableRepository.php.html#29\">DatabaseTableRepository::__construct<\/a>"],[0,1,"<a href=\"model\/DatabaseTableRepository.php.html#39\">DatabaseTableRepository::getAll<\/a>"],[0,1,"<a href=\"model\/DatabaseTableRepository.php.html#64\">DatabaseTableRepository::getCV<\/a>"],[0,2,"<a href=\"model\/DatabaseTableRepository.php.html#90\">DatabaseTableRepository::getOneById<\/a>"],[0,1,"<a href=\"model\/DatabaseTableRepository.php.html#112\">DatabaseTableRepository::getAllPrivate<\/a>"],[0,1,"<a href=\"model\/DatabaseTableRepository.php.html#141\">DatabaseTableRepository::delete<\/a>"],[0,1,"<a href=\"model\/DatabaseTableRepository.php.html#159\">DatabaseTableRepository::searchByColumn<\/a>"],[0,2,"<a href=\"model\/DatabaseTableRepository.php.html#184\">DatabaseTableRepository::create<\/a>"],[0,1,"<a href=\"model\/DatabaseTableRepository.php.html#214\">DatabaseTableRepository::update<\/a>"],[0,1,"<a href=\"model\/DatatbaseUtility.php.html#43\">DatatbaseUtility::objectToArrayLessId<\/a>"],[0,2,"<a href=\"model\/DatatbaseUtility.php.html#88\">DatatbaseUtility::removeNamespacesFromKeys<\/a>"],[0,1,"<a href=\"model\/DatatbaseUtility.php.html#118\">DatatbaseUtility::fieldListToInsertString<\/a>"],[0,2,"<a href=\"model\/DatatbaseUtility.php.html#135\">DatatbaseUtility::fieldListToValuesString<\/a>"],[0,2,"<a href=\"model\/DatatbaseUtility.php.html#158\">DatatbaseUtility::fieldListToUpdateString<\/a>"],[100,1,"<a href=\"model\/Job.php.html#58\">Job::getId<\/a>"],[100,1,"<a href=\"model\/Job.php.html#67\">Job::getPosition<\/a>"],[100,1,"<a href=\"model\/Job.php.html#75\">Job::getLocation<\/a>"],[100,1,"<a href=\"model\/Job.php.html#84\">Job::getexpires<\/a>"],[100,1,"<a href=\"model\/JobApp.php.html#96\">JobApp::getId<\/a>"],[100,1,"<a href=\"model\/JobApp.php.html#106\">JobApp::getFirst<\/a>"],[100,1,"<a href=\"model\/JobApp.php.html#116\">JobApp::getSurname<\/a>"],[100,1,"<a href=\"model\/JobApp.php.html#126\">JobApp::getAge<\/a>"],[100,1,"<a href=\"model\/JobApp.php.html#135\">JobApp::getAddress<\/a>"],[100,1,"<a href=\"model\/JobApp.php.html#146\">JobApp::getGender<\/a>"],[100,1,"<a href=\"model\/JobApp.php.html#155\">JobApp::getExperience<\/a>"],[100,1,"<a href=\"model\/JobApp.php.html#164\">JobApp::getPosition<\/a>"],[100,1,"<a href=\"model\/JobApp.php.html#176\">JobApp::getImage<\/a>"],[100,1,"<a href=\"model\/JobApp.php.html#185\">JobApp::setId<\/a>"],[100,1,"<a href=\"model\/JobApp.php.html#194\">JobApp::setFirst<\/a>"],[100,1,"<a href=\"model\/JobApp.php.html#203\">JobApp::setSurname<\/a>"],[100,1,"<a href=\"model\/JobApp.php.html#212\">JobApp::setAge<\/a>"],[100,1,"<a href=\"model\/JobApp.php.html#222\">JobApp::setAddress<\/a>"],[100,1,"<a href=\"model\/JobApp.php.html#231\">JobApp::setGender<\/a>"],[100,1,"<a href=\"model\/JobApp.php.html#240\">JobApp::setExperience<\/a>"],[100,1,"<a href=\"model\/JobApp.php.html#249\">JobApp::setPosition<\/a>"],[100,1,"<a href=\"model\/JobApp.php.html#258\">JobApp::setImage<\/a>"],[100,1,"<a href=\"model\/JobCreation.php.html#52\">JobCreation::getId<\/a>"],[100,1,"<a href=\"model\/JobCreation.php.html#61\">JobCreation::getCreated<\/a>"],[100,1,"<a href=\"model\/JobCreation.php.html#70\">JobCreation::setLocation<\/a>"],[100,1,"<a href=\"model\/JobCreation.php.html#79\">JobCreation::setPosition<\/a>"],[100,1,"<a href=\"model\/JobCreation.php.html#88\">JobCreation::setUser<\/a>"],[100,1,"<a href=\"model\/JobCreation.php.html#97\">JobCreation::setExpires<\/a>"],[100,1,"<a href=\"model\/JobCreation.php.html#107\">JobCreation::setCreated<\/a>"],[100,1,"<a href=\"model\/JobCreation.php.html#116\">JobCreation::getLocation<\/a>"],[100,1,"<a href=\"model\/JobCreation.php.html#125\">JobCreation::getPosition<\/a>"],[100,1,"<a href=\"model\/JobCreation.php.html#134\">JobCreation::getExpires<\/a>"],[100,1,"<a href=\"model\/JobCreation.php.html#143\">JobCreation::getuser<\/a>"],[100,1,"<a href=\"model\/Message.php.html#48\">Message::getId<\/a>"],[100,1,"<a href=\"model\/Message.php.html#57\">Message::setText<\/a>"],[100,1,"<a href=\"model\/Message.php.html#67\">Message::setUser<\/a>"],[100,1,"<a href=\"model\/Message.php.html#76\">Message::getText<\/a>"],[100,1,"<a href=\"model\/Message.php.html#86\">Message::getUser<\/a>"],[100,1,"<a href=\"model\/Message.php.html#95\">Message::setTimestamp<\/a>"],[100,1,"<a href=\"model\/Message.php.html#104\">Message::getTimestamp<\/a>"],[100,1,"<a href=\"model\/PrivateMessage.php.html#49\">PrivateMessage::getId<\/a>"],[100,1,"<a href=\"model\/PrivateMessage.php.html#58\">PrivateMessage::setText<\/a>"],[100,1,"<a href=\"model\/PrivateMessage.php.html#67\">PrivateMessage::setUser<\/a>"],[100,1,"<a href=\"model\/PrivateMessage.php.html#76\">PrivateMessage::getText<\/a>"],[100,1,"<a href=\"model\/PrivateMessage.php.html#86\">PrivateMessage::getReciver<\/a>"],[100,1,"<a href=\"model\/PrivateMessage.php.html#95\">PrivateMessage::setReciver<\/a>"],[100,1,"<a href=\"model\/PrivateMessage.php.html#104\">PrivateMessage::getUser<\/a>"],[100,1,"<a href=\"model\/PrivateMessage.php.html#113\">PrivateMessage::setTimestamp<\/a>"],[100,1,"<a href=\"model\/PrivateMessage.php.html#122\">PrivateMessage::getTimestamp<\/a>"],[100,1,"<a href=\"model\/Student.php.html#56\">Student::getId<\/a>"],[100,1,"<a href=\"model\/Student.php.html#66\">Student::getFirst<\/a>"],[100,1,"<a href=\"model\/Student.php.html#76\">Student::getSurname<\/a>"],[100,1,"<a href=\"model\/Student.php.html#86\">Student::getAge<\/a>"],[100,1,"<a href=\"model\/Student.php.html#94\">Student::getGpa<\/a>"],[100,1,"<a href=\"model\/Student.php.html#104\">Student::getStatus<\/a>"],[100,1,"<a href=\"model\/Student.php.html#114\">Student::setFirst<\/a>"],[100,1,"<a href=\"model\/Student.php.html#123\">Student::setSurname<\/a>"],[100,1,"<a href=\"model\/Student.php.html#132\">Student::setAge<\/a>"],[100,1,"<a href=\"model\/Student.php.html#141\">Student::setGpa<\/a>"],[100,1,"<a href=\"model\/Student.php.html#150\">Student::setStatus<\/a>"],[100,1,"<a href=\"model\/Student.php.html#160\">Student::setId<\/a>"],[100,1,"<a href=\"model\/Stydent.php.html#44\">Stydent::getId<\/a>"],[100,1,"<a href=\"model\/Stydent.php.html#53\">Stydent::getFirst<\/a>"],[100,1,"<a href=\"model\/Stydent.php.html#64\">Stydent::getSurname<\/a>"],[100,1,"<a href=\"model\/Stydent.php.html#75\">Stydent::getStatus<\/a>"],[100,1,"<a href=\"model\/User.php.html#49\">User::getId<\/a>"],[100,1,"<a href=\"model\/User.php.html#58\">User::setId<\/a>"],[100,1,"<a href=\"model\/User.php.html#67\">User::getUsername<\/a>"],[100,1,"<a href=\"model\/User.php.html#76\">User::setUsername<\/a>"],[100,1,"<a href=\"model\/User.php.html#85\">User::getPassword<\/a>"],[100,1,"<a href=\"model\/User.php.html#94\">User::getRole<\/a>"],[100,1,"<a href=\"model\/User.php.html#103\">User::setRole<\/a>"],[100,1,"<a href=\"model\/User.php.html#112\">User::setPassword<\/a>"],[100,1,"<a href=\"model\/User.php.html#124\">User::checkRole<\/a>"],[100,1,"<a href=\"model\/User.php.html#142\">User::retrieveID<\/a>"],[60,2,"<a href=\"model\/User.php.html#165\">User::canFindMatchingUsernameAndPassword<\/a>"],[90,2,"<a href=\"model\/User.php.html#189\">User::getOneByUsername<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

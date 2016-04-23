@@ -1,7 +1,7 @@
 {% extends 'lecturer_base.html.twig' %}
 
 {# ------------------------------------------------- #}
-{% block pageTitle %}Home page{% endblock %}
+{% block pageTitle %}Job Creation{% endblock %}
 
 {# ------------------------------------------------- #}
 {% block indexLinkStyle %}current_page{% endblock %}
@@ -33,7 +33,7 @@
         <p>
 	      Job expires:
 	      <br>
-	      <input type="text" name="expires" required>
+	      <input type="datetime-local" name="expires" required>
         </p>
           <p>
 		      user:

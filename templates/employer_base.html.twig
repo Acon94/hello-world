@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>EVOTE DVD - {% block pageTitle %}{% endblock %}</title>
+    <title>CDM placement - {% block pageTitle %}{% endblock %}</title>
     <meta charset="utf-8">
     <style>
        
@@ -21,6 +21,10 @@
     <ul>
         <li id="login">
             <a href="/?action=login"  class="{% block messagesLinkStyle %}{% endblock %}">Logout</a>
+        </li>
+        <li>
+	        	<p style=color:red;>Welcome:{{username}} </p>
+	        	
         </li>
 
     </ul>

@@ -1,4 +1,7 @@
 <?php
+/**
+ * related to the font of characters
+ */
 $type = 'TrueType';
 $name = 'CalligrapherRegular';
 $desc = array('Ascent'=>899,'Descent'=>-234,'CapHeight'=>899,'Flags'=>32,'FontBBox'=>'[-173 -234 1328 899]','ItalicAngle'=>0,'StemV'=>70,'MissingWidth'=>800);

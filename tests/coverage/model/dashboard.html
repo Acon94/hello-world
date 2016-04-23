@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for C:\laragon\www\Assighnment2017\src/model</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/nv.d3.min.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="../js/html5shiv.min.js"></script>
+  <script src="../js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="../index.html">C:\laragon\www\Assighnment2017\src</a></li>
+        <li><a href="index.html">model</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="DatatbaseUtility.php.html#15">DatatbaseUtility</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatabaseTableRepository.php.html#11">DatabaseTableRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatabaseTable.php.html#11">DatabaseTable</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatabaseManager.php.html#18">DatabaseManager</a></td><td class="text-right">66%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="DatabaseTableRepository.php.html#11">DatabaseTableRepository</a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="DatabaseTable.php.html#11">DatabaseTable</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="DatatbaseUtility.php.html#15">DatatbaseUtility</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="DatabaseManager.php.html#18">DatabaseManager</a></td><td class="text-right">3</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="DatabaseTableRepository.php.html#214"><abbr title="DatabaseTableRepository::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatabaseTableRepository.php.html#184"><abbr title="DatabaseTableRepository::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatabaseTableRepository.php.html#159"><abbr title="DatabaseTableRepository::searchByColumn">searchByColumn</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatabaseTableRepository.php.html#141"><abbr title="DatabaseTableRepository::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatatbaseUtility.php.html#43"><abbr title="DatatbaseUtility::objectToArrayLessId">objectToArrayLessId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatatbaseUtility.php.html#88"><abbr title="DatatbaseUtility::removeNamespacesFromKeys">removeNamespacesFromKeys</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatatbaseUtility.php.html#158"><abbr title="DatatbaseUtility::fieldListToUpdateString">fieldListToUpdateString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatatbaseUtility.php.html#135"><abbr title="DatatbaseUtility::fieldListToValuesString">fieldListToValuesString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatatbaseUtility.php.html#118"><abbr title="DatatbaseUtility::fieldListToInsertString">fieldListToInsertString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatabaseTableRepository.php.html#112"><abbr title="DatabaseTableRepository::getAllPrivate">getAllPrivate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatabaseTableRepository.php.html#90"><abbr title="DatabaseTableRepository::getOneById">getOneById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatabaseTable.php.html#82"><abbr title="DatabaseTable::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatabaseTable.php.html#57"><abbr title="DatabaseTable::getOneById">getOneById</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatabaseTable.php.html#37"><abbr title="DatabaseTable::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatabaseTable.php.html#23"><abbr title="DatabaseTable::getTableName">getTableName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatabaseTable.php.html#99"><abbr title="DatabaseTable::searchByColumn">searchByColumn</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatabaseTable.php.html#124"><abbr title="DatabaseTable::insert">insert</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatabaseTableRepository.php.html#64"><abbr title="DatabaseTableRepository::getCV">getCV</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatabaseTableRepository.php.html#39"><abbr title="DatabaseTableRepository::getAll">getAll</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatabaseTableRepository.php.html#29"><abbr title="DatabaseTableRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DatabaseTable.php.html#152"><abbr title="DatabaseTable::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#165"><abbr title="User::canFindMatchingUsernameAndPassword">canFindMatchingUsernameAndPassword</abbr></a></td><td class="text-right">60%</td></tr>
+       <tr><td><a href="DatabaseManager.php.html#61"><abbr title="DatabaseManager::__construct">__construct</abbr></a></td><td class="text-right">63%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="DatatbaseUtility.php.html#135"><abbr title="DatatbaseUtility::fieldListToValuesString">fieldListToValuesString</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="DatatbaseUtility.php.html#158"><abbr title="DatatbaseUtility::fieldListToUpdateString">fieldListToUpdateString</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="DatatbaseUtility.php.html#88"><abbr title="DatatbaseUtility::removeNamespacesFromKeys">removeNamespacesFromKeys</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="DatabaseTableRepository.php.html#184"><abbr title="DatabaseTableRepository::create">create</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="DatabaseTable.php.html#57"><abbr title="DatabaseTable::getOneById">getOneById</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="DatabaseTable.php.html#124"><abbr title="DatabaseTable::insert">insert</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="DatabaseTableRepository.php.html#90"><abbr title="DatabaseTableRepository::getOneById">getOneById</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="User.php.html#165"><abbr title="User::canFindMatchingUsernameAndPassword">canFindMatchingUsernameAndPassword</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="DatabaseManager.php.html#61"><abbr title="DatabaseManager::__construct">__construct</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 3.0.1</a> using <a href="http://php.net/" target="_top">PHP 5.6.16</a> and <a href="http://phpunit.de/">PHPUnit 5.0.8</a> at Thu Apr 21 4:34:58 PDT 2016.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../js/jquery.min.js" type="text/javascript"></script>
+  <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="../js/holder.min.js" type="text/javascript"></script>
+  <script src="../js/d3.min.js" type="text/javascript"></script>
+  <script src="../js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([3,0,0,0,0,0,0,1,0,0,1,8], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([21,0,0,0,0,0,0,2,0,0,1,92], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[100,16,"<a href=\"CV.php.html#18\">CV<\/a>"],[66.666666666667,3,"<a href=\"DatabaseManager.php.html#18\">DatabaseManager<\/a>"],[0,9,"<a href=\"DatabaseTable.php.html#11\">DatabaseTable<\/a>"],[0,11,"<a href=\"DatabaseTableRepository.php.html#11\">DatabaseTableRepository<\/a>"],[0,8,"<a href=\"DatatbaseUtility.php.html#15\">DatatbaseUtility<\/a>"],[100,4,"<a href=\"Job.php.html#21\">Job<\/a>"],[100,18,"<a href=\"JobApp.php.html#20\">JobApp<\/a>"],[100,11,"<a href=\"JobCreation.php.html#11\">JobCreation<\/a>"],[100,7,"<a href=\"Message.php.html#13\">Message<\/a>"],[100,9,"<a href=\"PrivateMessage.php.html#12\">PrivateMessage<\/a>"],[100,12,"<a href=\"Student.php.html#11\">Student<\/a>"],[100,4,"<a href=\"Stydent.php.html#10\">Stydent<\/a>"],[93.181818181818,14,"<a href=\"User.php.html#15\">User<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"CV.php.html#88\">CV::getId<\/a>"],[100,1,"<a href=\"CV.php.html#98\">CV::getFirst<\/a>"],[100,1,"<a href=\"CV.php.html#108\">CV::getSurname<\/a>"],[100,1,"<a href=\"CV.php.html#118\">CV::getAge<\/a>"],[100,1,"<a href=\"CV.php.html#127\">CV::getAddress<\/a>"],[100,1,"<a href=\"CV.php.html#137\">CV::getGender<\/a>"],[100,1,"<a href=\"CV.php.html#146\">CV::getExperience<\/a>"],[100,1,"<a href=\"CV.php.html#157\">CV::getImage<\/a>"],[100,1,"<a href=\"CV.php.html#166\">CV::setId<\/a>"],[100,1,"<a href=\"CV.php.html#175\">CV::setFirst<\/a>"],[100,1,"<a href=\"CV.php.html#184\">CV::setSurname<\/a>"],[100,1,"<a href=\"CV.php.html#193\">CV::setAge<\/a>"],[100,1,"<a href=\"CV.php.html#202\">CV::setAddress<\/a>"],[100,1,"<a href=\"CV.php.html#211\">CV::setGender<\/a>"],[100,1,"<a href=\"CV.php.html#220\">CV::setExperience<\/a>"],[100,1,"<a href=\"CV.php.html#229\">CV::setImage<\/a>"],[63.636363636364,2,"<a href=\"DatabaseManager.php.html#61\">DatabaseManager::__construct<\/a>"],[100,1,"<a href=\"DatabaseManager.php.html#85\">DatabaseManager::getDbh<\/a>"],[0,1,"<a href=\"DatabaseTable.php.html#23\">DatabaseTable::getTableName<\/a>"],[0,1,"<a href=\"DatabaseTable.php.html#37\">DatabaseTable::getAll<\/a>"],[0,2,"<a href=\"DatabaseTable.php.html#57\">DatabaseTable::getOneById<\/a>"],[0,1,"<a href=\"DatabaseTable.php.html#82\">DatabaseTable::delete<\/a>"],[0,1,"<a href=\"DatabaseTable.php.html#99\">DatabaseTable::searchByColumn<\/a>"],[0,2,"<a href=\"DatabaseTable.php.html#124\">DatabaseTable::insert<\/a>"],[0,1,"<a href=\"DatabaseTable.php.html#152\">DatabaseTable::update<\/a>"],[0,1,"<a href=\"DatabaseTableRepository.php.html#29\">DatabaseTableRepository::__construct<\/a>"],[0,1,"<a href=\"DatabaseTableRepository.php.html#39\">DatabaseTableRepository::getAll<\/a>"],[0,1,"<a href=\"DatabaseTableRepository.php.html#64\">DatabaseTableRepository::getCV<\/a>"],[0,2,"<a href=\"DatabaseTableRepository.php.html#90\">DatabaseTableRepository::getOneById<\/a>"],[0,1,"<a href=\"DatabaseTableRepository.php.html#112\">DatabaseTableRepository::getAllPrivate<\/a>"],[0,1,"<a href=\"DatabaseTableRepository.php.html#141\">DatabaseTableRepository::delete<\/a>"],[0,1,"<a href=\"DatabaseTableRepository.php.html#159\">DatabaseTableRepository::searchByColumn<\/a>"],[0,2,"<a href=\"DatabaseTableRepository.php.html#184\">DatabaseTableRepository::create<\/a>"],[0,1,"<a href=\"DatabaseTableRepository.php.html#214\">DatabaseTableRepository::update<\/a>"],[0,1,"<a href=\"DatatbaseUtility.php.html#43\">DatatbaseUtility::objectToArrayLessId<\/a>"],[0,2,"<a href=\"DatatbaseUtility.php.html#88\">DatatbaseUtility::removeNamespacesFromKeys<\/a>"],[0,1,"<a href=\"DatatbaseUtility.php.html#118\">DatatbaseUtility::fieldListToInsertString<\/a>"],[0,2,"<a href=\"DatatbaseUtility.php.html#135\">DatatbaseUtility::fieldListToValuesString<\/a>"],[0,2,"<a href=\"DatatbaseUtility.php.html#158\">DatatbaseUtility::fieldListToUpdateString<\/a>"],[100,1,"<a href=\"Job.php.html#58\">Job::getId<\/a>"],[100,1,"<a href=\"Job.php.html#67\">Job::getPosition<\/a>"],[100,1,"<a href=\"Job.php.html#75\">Job::getLocation<\/a>"],[100,1,"<a href=\"Job.php.html#84\">Job::getexpires<\/a>"],[100,1,"<a href=\"JobApp.php.html#96\">JobApp::getId<\/a>"],[100,1,"<a href=\"JobApp.php.html#106\">JobApp::getFirst<\/a>"],[100,1,"<a href=\"JobApp.php.html#116\">JobApp::getSurname<\/a>"],[100,1,"<a href=\"JobApp.php.html#126\">JobApp::getAge<\/a>"],[100,1,"<a href=\"JobApp.php.html#135\">JobApp::getAddress<\/a>"],[100,1,"<a href=\"JobApp.php.html#146\">JobApp::getGender<\/a>"],[100,1,"<a href=\"JobApp.php.html#155\">JobApp::getExperience<\/a>"],[100,1,"<a href=\"JobApp.php.html#164\">JobApp::getPosition<\/a>"],[100,1,"<a href=\"JobApp.php.html#176\">JobApp::getImage<\/a>"],[100,1,"<a href=\"JobApp.php.html#185\">JobApp::setId<\/a>"],[100,1,"<a href=\"JobApp.php.html#194\">JobApp::setFirst<\/a>"],[100,1,"<a href=\"JobApp.php.html#203\">JobApp::setSurname<\/a>"],[100,1,"<a href=\"JobApp.php.html#212\">JobApp::setAge<\/a>"],[100,1,"<a href=\"JobApp.php.html#222\">JobApp::setAddress<\/a>"],[100,1,"<a href=\"JobApp.php.html#231\">JobApp::setGender<\/a>"],[100,1,"<a href=\"JobApp.php.html#240\">JobApp::setExperience<\/a>"],[100,1,"<a href=\"JobApp.php.html#249\">JobApp::setPosition<\/a>"],[100,1,"<a href=\"JobApp.php.html#258\">JobApp::setImage<\/a>"],[100,1,"<a href=\"JobCreation.php.html#52\">JobCreation::getId<\/a>"],[100,1,"<a href=\"JobCreation.php.html#61\">JobCreation::getCreated<\/a>"],[100,1,"<a href=\"JobCreation.php.html#70\">JobCreation::setLocation<\/a>"],[100,1,"<a href=\"JobCreation.php.html#79\">JobCreation::setPosition<\/a>"],[100,1,"<a href=\"JobCreation.php.html#88\">JobCreation::setUser<\/a>"],[100,1,"<a href=\"JobCreation.php.html#97\">JobCreation::setExpires<\/a>"],[100,1,"<a href=\"JobCreation.php.html#107\">JobCreation::setCreated<\/a>"],[100,1,"<a href=\"JobCreation.php.html#116\">JobCreation::getLocation<\/a>"],[100,1,"<a href=\"JobCreation.php.html#125\">JobCreation::getPosition<\/a>"],[100,1,"<a href=\"JobCreation.php.html#134\">JobCreation::getExpires<\/a>"],[100,1,"<a href=\"JobCreation.php.html#143\">JobCreation::getuser<\/a>"],[100,1,"<a href=\"Message.php.html#48\">Message::getId<\/a>"],[100,1,"<a href=\"Message.php.html#57\">Message::setText<\/a>"],[100,1,"<a href=\"Message.php.html#67\">Message::setUser<\/a>"],[100,1,"<a href=\"Message.php.html#76\">Message::getText<\/a>"],[100,1,"<a href=\"Message.php.html#86\">Message::getUser<\/a>"],[100,1,"<a href=\"Message.php.html#95\">Message::setTimestamp<\/a>"],[100,1,"<a href=\"Message.php.html#104\">Message::getTimestamp<\/a>"],[100,1,"<a href=\"PrivateMessage.php.html#49\">PrivateMessage::getId<\/a>"],[100,1,"<a href=\"PrivateMessage.php.html#58\">PrivateMessage::setText<\/a>"],[100,1,"<a href=\"PrivateMessage.php.html#67\">PrivateMessage::setUser<\/a>"],[100,1,"<a href=\"PrivateMessage.php.html#76\">PrivateMessage::getText<\/a>"],[100,1,"<a href=\"PrivateMessage.php.html#86\">PrivateMessage::getReciver<\/a>"],[100,1,"<a href=\"PrivateMessage.php.html#95\">PrivateMessage::setReciver<\/a>"],[100,1,"<a href=\"PrivateMessage.php.html#104\">PrivateMessage::getUser<\/a>"],[100,1,"<a href=\"PrivateMessage.php.html#113\">PrivateMessage::setTimestamp<\/a>"],[100,1,"<a href=\"PrivateMessage.php.html#122\">PrivateMessage::getTimestamp<\/a>"],[100,1,"<a href=\"Student.php.html#56\">Student::getId<\/a>"],[100,1,"<a href=\"Student.php.html#66\">Student::getFirst<\/a>"],[100,1,"<a href=\"Student.php.html#76\">Student::getSurname<\/a>"],[100,1,"<a href=\"Student.php.html#86\">Student::getAge<\/a>"],[100,1,"<a href=\"Student.php.html#94\">Student::getGpa<\/a>"],[100,1,"<a href=\"Student.php.html#104\">Student::getStatus<\/a>"],[100,1,"<a href=\"Student.php.html#114\">Student::setFirst<\/a>"],[100,1,"<a href=\"Student.php.html#123\">Student::setSurname<\/a>"],[100,1,"<a href=\"Student.php.html#132\">Student::setAge<\/a>"],[100,1,"<a href=\"Student.php.html#141\">Student::setGpa<\/a>"],[100,1,"<a href=\"Student.php.html#150\">Student::setStatus<\/a>"],[100,1,"<a href=\"Student.php.html#160\">Student::setId<\/a>"],[100,1,"<a href=\"Stydent.php.html#44\">Stydent::getId<\/a>"],[100,1,"<a href=\"Stydent.php.html#53\">Stydent::getFirst<\/a>"],[100,1,"<a href=\"Stydent.php.html#64\">Stydent::getSurname<\/a>"],[100,1,"<a href=\"Stydent.php.html#75\">Stydent::getStatus<\/a>"],[100,1,"<a href=\"User.php.html#49\">User::getId<\/a>"],[100,1,"<a href=\"User.php.html#58\">User::setId<\/a>"],[100,1,"<a href=\"User.php.html#67\">User::getUsername<\/a>"],[100,1,"<a href=\"User.php.html#76\">User::setUsername<\/a>"],[100,1,"<a href=\"User.php.html#85\">User::getPassword<\/a>"],[100,1,"<a href=\"User.php.html#94\">User::getRole<\/a>"],[100,1,"<a href=\"User.php.html#103\">User::setRole<\/a>"],[100,1,"<a href=\"User.php.html#112\">User::setPassword<\/a>"],[100,1,"<a href=\"User.php.html#124\">User::checkRole<\/a>"],[100,1,"<a href=\"User.php.html#142\">User::retrieveID<\/a>"],[60,2,"<a href=\"User.php.html#165\">User::canFindMatchingUsernameAndPassword<\/a>"],[90,2,"<a href=\"User.php.html#189\">User::getOneByUsername<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

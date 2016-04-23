@@ -1,0 +1,47 @@
+<?php
+/**
+ * repository class
+ */
+namespace Itb\Model;
+/**
+ * Class DvdRepository
+ * @package Itb\Model
+ */
+class DvdRepository extends DatabaseTableRepository
+{
+    /**
+     *
+     * DvdRepository constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct('Dvd', 'students');
+    }
+
+    /**
+     * search by title
+     * @param $searchText
+     * @return array
+     */
+    public function searchByTitleOrCategory($searchText)
+    {
+        $db = new DatabaseManager();
+        $connection = $db->getDbh();
+
+        // wrap wildcard '%' around the serach text for the SQL query
+        $searchText = '%' . $searchText . '%';
+
+        $statement = $connection->prepare('SELECT * from students WHERE (first LIKE :searchText) or (surname LIKE :searchText)');
+        $statement->bindParam(':searchText', $searchText, \PDO::PARAM_STR);
+        $statement->setFetchMode(\PDO::FETCH_CLASS, '\\Itb\\Dvd');
+        $statement->execute();
+
+        $dvds = $statement->fetchAll();
+
+        return $dvds;
+    }
+
+
+
+
+}

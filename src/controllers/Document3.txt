@@ -1,0 +1,458 @@
+<?php
+namespace Itb\Controller;
+
+
+
+use Itb\Model\User;
+use Itb\Model\Job;
+use fpdf;
+use Itb\Model\CV;
+use Itb\Model\DatabaseTableRepository;
+use Silex\Application;
+use Symfony\Component\HttpFoundation\Request;
+/**
+ * Created in textpad
+ * User:Andrew B00069517
+ * Date: 26/01/2016
+ * Time: 10:44
+ *
+ * controlls the main actions
+ *
+ *
+ *
+ */
+
+class MainController
+{
+
+
+
+
+
+	     public function jobcreationAction(Request $request, Application $app)
+		 		     {
+
+						session_start();
+		 		     	$username = $_SESSION['username'];
+
+		 		         $argsArray = [
+
+		 		         	'username' => $username,
+		 		         ];
+		 		           $templateName = 'jobcreation';
+		          return $app['twig']->render($templateName . '.html.twig', $argsArray);
+	     }
+
+	     public function loginAction(Request $request, Application $app)
+		  {
+		 		         $argsArray = [];
+		 		         $templateName = 'login';
+        				return $app['twig']->render($templateName . '.html.twig', $argsArray);
+	     }
+	     /**
+		 * @param \Twig_Environment   $twig
+		 */
+		 public function jobAction(Request $request, Application $app)
+		     {
+
+		        session_start();
+		        $id = $_SESSION['id'];
+		        $_SESSION['id'] = $id;
+		       	$username = $_SESSION['username'];
+
+		        print_r($id);
+
+		        // get Unix timestamp for the current time
+				//$now = new \DateTime();
+				   $created = date('U') + (60*60*1); // unix time for Date Now
+		           $expires = $created + (60*4);
+
+
+		         $jobrepo = new DatabaseTableRepository('Job', 'jobs');
+		         $cvrepository = new DatabaseTableRepository('CV', 'cvs');
+
+		         $jobs = $jobrepo->getAll();
+		         $cvs = $cvrepository->getOneById($id);
+
+		         // get Unix timestamp for the current time
+				 				   //$now = new \DateTime();
+				   $created = date('U') + (60*60*1); // unix time for Date Now
+
+
+
+
+
+		         $argsArray = [
+		             'jobs' => $jobs,
+		             'id' => $id,
+		             'cvs' => $cvs,
+		             'created' => $created,
+		             'username' =>$username,
+
+
+
+
+		         ];
+
+		         $templateName = 'job';
+		          return $app['twig']->render($templateName . '.html.twig', $argsArray);
+		     }
+		       /**
+			 		 * @param \Twig_Environment   $twig
+			 		 */
+			 		 public function commentAction(\Twig_Environment $twig)
+			 		     {
+
+			 		     	session_start();
+		 		     	$username = $_SESSION['username'];
+
+			 		         $jobrepo = new DatabaseTableRepository('Job', 'jobs');
+			 		         $jobs = $jobrepo->getAll();
+
+			 		         $argsArray = [
+			 		             'jobs' => $jobs,
+			 		             'username' => $username,
+
+			 		         ];
+
+			 		         $template = 'comments';
+			 		         $htmlOutput = $twig->render($template . '.html.twig', $argsArray);
+			 		         print $htmlOutput;
+		     }
+		      /**
+			  * @param \Twig_Environment   $twig
+			  */
+			public function cvAction(Request $request, Application $app,$id)
+			    {
+						session_start();
+												        $id = $_SESSION['id'];
+												        $_SESSION['id'] = $id;
+												        $username = $_SESSION['username'];
+
+		        print_r($id);
+
+
+			    $cvrepository = new DatabaseTableRepository('CV', 'cvs');
+			    $jobrepository = new DatabaseTableRepository('Job', 'jobs');
+
+					   	    $cvs = $cvrepository->getOneById($id);
+
+
+
+
+
+					   		 		         $argsArray = [
+					   			 		             'cvs' => $cvs,
+					   			 		             'id' => $id,
+					   			 		             'username' => $username,
+					   			 		          ];
+
+			       		 $templateName = 'cv';
+        				return $app['twig']->render($templateName . '.html.twig', $argsArray);
+    		}
+		     /**
+			 			  * @param \Twig_Environment   $twig
+			 			  */
+			 			  public function viewCVAction(Request $request, Application $app)
+			 			     {
+
+			 			     		     	session_start();
+		 		     						$username = $_SESSION['username'];
+
+			 			     	$dvdRepository = new DatabaseTableRepository('CV', 'cvs');
+								        $cvs = $dvdRepository->getAll();
+
+								        $argsArray = [
+								            'cvs' => $cvs,
+								            'username' =>$username,
+								        ];
+
+								       $templateName = 'viewCV';
+        				return $app['twig']->render($templateName . '.html.twig', $argsArray);
+		     }
+		     /**
+			 			  * @param \Twig_Environment   $twig
+			 			  */
+			 			  public function commentsAction(Request $request, Application $app)
+			 			     {
+			 			     	session_start();
+		 		     			$username = $_SESSION['username'];
+		 		     			 $_SESSION['loggedIn'] = true;
+
+		 		     			 if (isset($_SESSION['loggedIn'])) {
+								echo ' SESSION HYY';}
+
+			 			         $jobrepo = new DatabaseTableRepository('Job', 'jobs');
+			 			         $jobs = $jobrepo->getAll();
+
+
+
+
+
+			 	 		         $argsArray = [
+			 		 		             'jobs' => $jobs,
+			 		 		             'username' => $username,
+
+			 			 		         ];
+
+
+			 	 		        $templateName = 'comments';
+        				return $app['twig']->render($templateName . '.html.twig', $argsArray);
+
+			 	 		       }
+
+			 	 		 /**
+						  * @param \Twig_Environment   $twig
+						  */
+						 			 			  public function privateCommentsAction(Request $request, Application $app,$id)
+						 			 			     {
+						 			 			     	session_start();
+		 		     									$username = $_SESSION['username'];
+
+						 			 			         $jobrepo = new DatabaseTableRepository('Student', 'students');
+						 			 			         $students = $jobrepo->getAll();
+
+						 			 	 		         $argsArray = [
+						 			 		 		             'student' => $students,
+						 			 		 		             'id' => $id,
+						 			 		 		             'username' =>$username,
+						 			 			 		         ];
+
+
+						 			 	 		        $templateName = 'Privatecomments';
+						         				return $app['twig']->render($templateName . '.html.twig', $argsArray);
+
+			 	 		       }
+
+
+    /**
+     * @param \Twig_Environment   $twig
+     */
+    public function aboutAction(\Twig_Environment $twig)
+    {
+        $argsArray = [];
+        $template = 'about';
+        $htmlOutput = $twig->render($template . '.html.twig', $argsArray);
+        print $htmlOutput;
+    }
+
+
+
+    /**
+     * @param \Twig_Environment   $twig
+     */
+    public function indexAction(Request $request, Application $app)
+    {
+
+
+        $argsArray = [];
+
+        $templateName = 'index';
+        return $app['twig']->render($templateName . '.html.twig', $argsArray);
+    }
+    public function lecturerAction(\Twig_Environment $twig)
+	    {
+	        $argsArray = [];
+	        $template = 'index';
+	        $htmlOutput = $twig->render($template . '.html.twig', $argsArray);
+	        print $htmlOutput;
+    }
+
+    /**
+     * @param \Twig_Environment   $twig
+     */
+    public function listAction(Request $request, Application $app)
+    {
+
+					 			     	session_start();
+		 		     			$username = $_SESSION['username'];
+
+    	 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+		 $cvrepository = new DatabaseTableRepository('CV', 'cvs');
+	     $cvs = $cvrepository->getCV($id);
+
+		 		         $argsArray = [
+			 		             'cvs' => $cvs,
+			 		             'username' => $username,
+				 		         ];
+
+
+ 						 $templateName = 'list';
+        				return $app['twig']->render($templateName . '.html.twig', $argsArray);
+    }
+    /**
+	     * @param \Twig_Environment   $twig
+	     */
+	    public function employerAction(\Twig_Environment $twig)
+	    {
+	        $dvdRepository = new DatabaseTableRepository('Stydent', 'students');
+	        $dvds = $dvdRepository->getAll();
+
+	        $argsArray = [
+	            'dvds' => $dvds,
+	        ];
+
+	        $template = 'emloyer';
+	        $htmlOutput = $twig->render($template . '.html.twig', $argsArray);
+	        print $htmlOutput;
+    }
+
+        public function studentsAction(Request $request, Application $app)
+		    {
+		    		session_start();
+					$username = $_SESSION['username'];
+
+					echo ('USER' . $username);
+
+
+
+
+		        $dvdRepository = new DatabaseTableRepository('Stydent', 'students');
+		        $dvds = $dvdRepository->getAll();
+
+		        $argsArray = [
+		            'dvds' => $dvds,
+		           'username' => $username,
+		        ];
+
+		       			 $templateName = 'students';
+        				return $app['twig']->render($templateName . '.html.twig', $argsArray);
+    }
+
+    /**
+     * @param \Twig_Environment   $twig
+     */
+    public function filterListAction(\Twig_Environment $twig)
+    {
+        $searchText = filter_input(INPUT_POST, 'searchText', FILTER_SANITIZE_STRING);
+
+        $dvdRepository = new DatabaseTableRepository('Stydent', 'students');
+        $dvds = $dvdRepository->searchByColumn('first', $searchText);
+
+        $argsArray = [
+            'dvds' => $dvds,
+            'searchText' => $searchText
+        ];
+
+        $template = 'list';
+        $htmlOutput = $twig->render($template . '.html.twig', $argsArray);
+        print $htmlOutput;
+    }
+
+    /**
+     * @param \Twig_Environment   $twig
+     */
+    public function filterListTitleorCategoryAction(\Twig_Environment $twig)
+    {
+        $searchText = filter_input(INPUT_POST, 'searchText', FILTER_SANITIZE_STRING);
+
+        $dvdRepository = new DvdRepository();
+        $dvds = $dvdRepository->searchByTitleOrCategory($searchText);
+
+        $argsArray = [
+            'students' => $dvds,
+            'searchText' => $searchText
+        ];
+
+        $template = 'list';
+        $htmlOutput = $twig->render($template . '.html.twig', $argsArray);
+        print $htmlOutput;
+    }
+
+
+
+    /**
+     * @param \Twig_Environment   $twig
+     */
+    public function detailAction(Request $request, Application $app ,$id)
+    {
+
+					 			     	session_start();
+		 		     			$username = $_SESSION['username'];
+
+       $cvrepository = new DatabaseTableRepository('CV', 'cvs');
+	   	     $cvs = $cvrepository->getOneById($id);
+
+	   	     $argsArray = [
+			 	   'message' => 'sorry, no result could be found with id given = ' . $id
+				 		         ];
+			 $templateName = 'error';
+
+
+	   	        if (null != $cvs){
+			 			      $argsArray = [
+							  	        'cvs' => $cvs,
+							  	        'username' => $username,
+				 		         ];
+
+
+
+       					$templateName = 'detail';
+       				}
+        				return $app['twig']->render($templateName . '.html.twig', $argsArray);
+    }
+
+
+	    /**
+	     * @param \Twig_Environment   $twig
+	     */
+	public function cvdownloadAction(Request $request, Application $app ,$id)
+	    {
+	       $applicationrepository = new DatabaseTableRepository('JobApp', ' applicants');
+		   	     $cvs = $applicationrepository->getOneById($id);
+
+
+
+
+
+		   		 		         $argsArray = [
+		   			 		             'cvs' => $cvs,
+		   			 		             'id' => $id,
+
+					 		         ];
+					 		         var_dump($cvs);
+
+					$objtext = serialize($cvs);
+
+
+					$first= $cvs->getFirst();
+					$surname = $cvs->getSurname();
+					$age = $cvs->getAge();
+					$address = $cvs->getAddress();
+					$gender = $cvs->getGender();
+					$experience = $cvs->getExperience();
+					$position = $cvs->getPosition();
+					$image = $cvs->getImage();
+
+					$fp = fopen("$first'sCV.txt", "a+");
+					fwrite($fp, $first ."\t". $surname ."\t\n". $age. "\t".$gender . "\t". $address  . "\t". $experience . "\t" . $image . "\t" . $position . "\r\n");
+					fclose($fp);
+
+
+
+					require('fpdf.php');
+
+					$pdf = new FPDF();
+					$pdf->AddPage();
+					$pdf->SetFont('Arial','B',16);
+					$pdf->Cell(40,10,$first);
+					$pdf->Cell(40,10,$surname);
+					$pdf->Cell(40,10,$age);
+					$pdf->Cell(40,10,$address);
+					$pdf->Cell(40,10,$gender);
+					$pdf->Cell(40,10,$experience);
+					$pdf->Cell(40,10,$position);
+					$pdf->Image('images/'. $image,30,30,-300);
+
+					$filename="$first'sCV.pdf";
+					$pdf->Output($filename,'F');
+
+
+
+	       					$templateName = 'cvdownload';
+	        				return $app['twig']->render($templateName . '.html.twig', $argsArray);
+    }
+
+
+
+}

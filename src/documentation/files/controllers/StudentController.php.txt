@@ -1,155 +1,182 @@
 <?php
+/**
+ * Student controller
+ *
+ *
+ */
 namespace Itb\Controller;
 
 
 use Itb\Model\User;
+use Itb\Model\Job;
+use fpdf;
+use Itb\Model\CV;
+use Itb\Model\DatabaseTableRepository;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
-/**
- * Created in textpad
- * User:Andrew B00069517
- * Date: 26/01/2016
- * Time: 10:44
- *
- * controlls student actions
- *
- *
- *
- */
 
-class MainController
+/**
+ * controlls the actions froma student
+ * Class StudentController
+ * @package Itb\Controller
+ */
+class StudentController
 {
 
 
-	    /**
-	     * @param \Twig_Environment   $twig
-	     */
-	     public function studentAction(\Twig_Environment $twig)
-		     {
-		         $argsArray = [];
-		         $template = 'student';
-		         $htmlOutput = $twig->render($template . '.html.twig', $argsArray);
-		         print $htmlOutput;
-	     }
-	     /**
-		 	     * @param \Twig_Environment   $twig
-		 	     */
-		 	     public function jobAction(\Twig_Environment $twig)
-		 		     {
-		 		         $argsArray = [];
-		 		         $template = 'jobs';
-		 		         $htmlOutput = $twig->render($template . '.html.twig', $argsArray);
-		 		         print $htmlOutput;
-	     }
-
     /**
-     * @param \Twig_Environment   $twig
+     * view comments action
+     *
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
      */
-    public function aboutAction(\Twig_Environment $twig)
+    public function ViewCommentsAction(Request $request, Application $app)
     {
-        $argsArray = [];
-        $template = 'about';
-        $htmlOutput = $twig->render($template . '.html.twig', $argsArray);
-        print $htmlOutput;
-    }
+        session_start();
+        $id = $_SESSION['id'];
+        $_SESSION['id'] = $id;
+        $username = $_SESSION['username'];
 
+        print_r($id);
 
+        //        $messageRepository = new MessageRepository();
+        $messageRepository = new DatabaseTableRepository('Message', 'messages');
 
-    /**
-     * @param \Twig_Environment   $twig
-     */
-    public function indexAction(\Twig_Environment $twig)
-    {
-        $argsArray = [];
-        $template = 'index';
-        $htmlOutput = $twig->render($template . '.html.twig', $argsArray);
-        print $htmlOutput;
-    }
+        $privatemessageRepository = new DatabaseTableRepository('PrivateMessage', 'privatemessags');
 
-    /**
-     * @param \Twig_Environment   $twig
-     */
-    public function listAction(\Twig_Environment $twig)
-    {
-        $dvdRepository = new DatabaseTableRepository('Dvd', 'students');
-        $dvds = $dvdRepository->getAll();
+        $messages = $messageRepository->getAll();
+
 
         $argsArray = [
-            'dvds' => $dvds,
+            'messages' => $messages,
+            'username' => $username,
+
+            'id' => $id,
         ];
 
-        $template = 'list';
-        $htmlOutput = $twig->render($template . '.html.twig', $argsArray);
-        print $htmlOutput;
+        $templateName = 'viewComments';
+        return $app['twig']->render($templateName . '.html.twig', $argsArray,$id);
     }
 
     /**
-     * @param \Twig_Environment   $twig
+     * Job action function displays list of jobs
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
      */
-    public function filterListAction(\Twig_Environment $twig)
+    public function jobAction(Request $request, Application $app)
     {
-        $searchText = filter_input(INPUT_POST, 'searchText', FILTER_SANITIZE_STRING);
 
-        $dvdRepository = new DatabaseTableRepository('Dvd', 'students');
-        $dvds = $dvdRepository->searchByColumn('first', $searchText);
+        session_start();
+        $id = $_SESSION['id'];
+        $_SESSION['id'] = $id;
+        $username = $_SESSION['username'];
+
+        print_r($id);
+
+        // get Unix timestamp for the current time
+        //$now = new \DateTime();
+        $created = date('U') + (60 * 60 * 1); // unix time for Date Now
+        $expires = $created + (60 * 4);
+
+
+        $jobrepo = new DatabaseTableRepository('Job', 'jobs');
+        $cvrepository = new DatabaseTableRepository('CV', 'cvs');
+
+        $jobs = $jobrepo->getAll();
+        $cvs = $cvrepository->getOneById($id);
+
+        // get Unix timestamp for the current time
+        //$now = new \DateTime();
+        $created = date('U') + (60 * 60 * 1); // unix time for Date Now
+
 
         $argsArray = [
-            'dvds' => $dvds,
-            'searchText' => $searchText
+            'jobs' => $jobs,
+            'id' => $id,
+            'cvs' => $cvs,
+            'created' => $created,
+            'username' => $username,
+
+
         ];
 
-        $template = 'list';
-        $htmlOutput = $twig->render($template . '.html.twig', $argsArray);
-        print $htmlOutput;
+        $templateName = 'job';
+        return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
     /**
-     * @param \Twig_Environment   $twig
+     *
+     * displays messages for the logged in user
+     *
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     *
+     *
      */
-    public function filterListTitleorCategoryAction(\Twig_Environment $twig)
+    public function viewPrivateMessagesAction(Request $request, Application $app)
     {
-        $searchText = filter_input(INPUT_POST, 'searchText', FILTER_SANITIZE_STRING);
 
-        $dvdRepository = new DvdRepository();
-        $dvds = $dvdRepository->searchByTitleOrCategory($searchText);
+
+        session_start();
+        $id = $_SESSION['id'];
+        $_SESSION['id'] = $id;
+        $username = $_SESSION['username'];
+
+        print_r($id);
+
+
+
+        $privatemessageRepository = new DatabaseTableRepository('PrivateMessage', 'privatemessags');
+
+        $privatemessages = $privatemessageRepository->getAllPrivate($id);
 
         $argsArray = [
-            'students' => $dvds,
-            'searchText' => $searchText
+
+            'privatemessages' => $privatemessages,
+            'id' => $id,
+            'username' => $username,
         ];
 
-        $template = 'list';
-        $htmlOutput = $twig->render($template . '.html.twig', $argsArray);
-        print $htmlOutput;
+        $templateName = 'viewPrivateComments';
+        return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
-
-
     /**
-     * @param \Twig_Environment   $twig
+     * user cv action
+     *
+     * @param Request $request
+     * @param Application $app
+     * @param $id
+     * @return mixed
      */
-    public function detailAction(\Twig_Environment $twig, $id)
+
+    public function cvAction(Request $request, Application $app, $id)
     {
-        $dvdRepository = new DatabaseTableRepository('Dvd', 'students');
-        $dvd = $dvdRepository->getOneById($id);
+        session_start();
+        $id = $_SESSION['id'];
+        $_SESSION['id'] = $id;
+        $username = $_SESSION['username'];
+
+        print_r($id);
+
+
+        $cvrepository = new DatabaseTableRepository('CV', 'cvs');
+        $jobrepository = new DatabaseTableRepository('Job', 'jobs');
+
+        $cvs = $cvrepository->getOneById($id);
+
 
         $argsArray = [
-            'dvd' => $dvd,
+            'cvs' => $cvs,
+            'id' => $id,
+            'username' => $username,
         ];
 
-        $template = 'detail';
-        $htmlOutput = $twig->render($template . '.html.twig', $argsArray);
-        print $htmlOutput;
+        $templateName = 'cv';
+        return $app['twig']->render($templateName . '.html.twig', $argsArray);
     }
 
-    /**
-     * @param \Twig_Environment   $twig
-     */
-    public function sitemapAction(\Twig_Environment $twig)
-    {
-        $argsArray = [];
-        $template = 'sitemap';
-        $htmlOutput = $twig->render($template . '.html.twig', $argsArray);
-        print $htmlOutput;
-    }
 }

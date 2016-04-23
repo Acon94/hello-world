@@ -1,4 +1,7 @@
 <?php
+/**
+ * related to the font of characters
+ */
 $type = 'Core';
 $name = 'Courier-BoldOblique';
 $up = -100;

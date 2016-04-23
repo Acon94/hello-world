@@ -1,4 +1,7 @@
 <?php
+/**
+ * related to the font of characters
+ */
 $type = 'Core';
 $name = 'Helvetica';
 $up = -100;

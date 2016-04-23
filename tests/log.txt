@@ -1,3 +1,103 @@
 TAP version 13
-ok 1 - ItbTest\QuizTest::testZeroTotalAttemptedWhenCreated
-1..1
+ok 1 - ItbTest\CVTest::testGetId
+ok 2 - ItbTest\CVTest::testFirst
+ok 3 - ItbTest\CVTest::testSurname
+ok 4 - ItbTest\CVTest::testAge
+ok 5 - ItbTest\CVTest::testAddress
+ok 6 - ItbTest\CVTest::testExperience
+ok 7 - ItbTest\CVTest::testGender
+ok 8 - ItbTest\CVTest::testImage
+ok 9 - ItbTest\CVTest::testSetId
+ok 10 - ItbTest\CVTest::testSetFirst
+ok 11 - ItbTest\CVTest::testSetSurname
+ok 12 - ItbTest\CVTest::testSetAge
+ok 13 - ItbTest\CVTest::testSetGender
+ok 14 - ItbTest\CVTest::testSetAddress
+ok 15 - ItbTest\CVTest::testSetExperience
+ok 16 - ItbTest\CVTest::testSetImage
+not ok 17 - Failure: ItbTest\DatabaseManagerTest::testGetDbh
+  ---
+  message: 'PDO Object () does not match expected type "NULL".'
+  severity: fail
+  data:
+      got: null
+      expected: null
+  ...
+ok 18 - ItbTest\JobAppTest::testGetId
+ok 19 - ItbTest\JobAppTest::testFirst
+ok 20 - ItbTest\JobAppTest::testSurname
+ok 21 - ItbTest\JobAppTest::testAge
+ok 22 - ItbTest\JobAppTest::testAddress
+ok 23 - ItbTest\JobAppTest::testExperience
+ok 24 - ItbTest\JobAppTest::testGender
+ok 25 - ItbTest\JobAppTest::testPosition
+ok 26 - ItbTest\JobAppTest::testImage
+ok 27 - ItbTest\JobAppTest::testSetId
+ok 28 - ItbTest\JobAppTest::testSetFirst
+ok 29 - ItbTest\JobAppTest::testSetSurname
+ok 30 - ItbTest\JobAppTest::testSetAge
+ok 31 - ItbTest\JobAppTest::testSetGender
+ok 32 - ItbTest\JobAppTest::testSetAddress
+ok 33 - ItbTest\JobAppTest::testSetExperience
+ok 34 - ItbTest\JobAppTest::testSetPosition
+ok 35 - ItbTest\JobAppTest::testSetImage
+ok 36 - ItbTest\JobCreationTest::testGetId
+ok 37 - ItbTest\JobCreationTest::testLocation
+ok 38 - ItbTest\JobCreationTest::testPosition
+ok 39 - ItbTest\JobCreationTest::testCreated
+ok 40 - ItbTest\JobCreationTest::testExpires
+ok 41 - ItbTest\JobCreationTest::testSetPosition
+ok 42 - ItbTest\JobCreationTest::testSetLocation
+ok 43 - ItbTest\JobCreationTest::testUser
+ok 44 - ItbTest\JobCreationTest::testSetUser
+ok 45 - ItbTest\JobCreationTest::testSetExpires
+ok 46 - ItbTest\JobCreationTest::testSetCreated
+ok 47 - ItbTest\JobTest::testGetId
+ok 48 - ItbTest\JobTest::testLocation
+ok 49 - ItbTest\JobTest::testPosition
+ok 50 - ItbTest\JobTest::testExpires
+ok 51 - ItbTest\MessageTest::testGetId
+ok 52 - ItbTest\MessageTest::testText
+ok 53 - ItbTest\MessageTest::testUser
+ok 54 - ItbTest\MessageTest::testTimeStamp
+ok 55 - ItbTest\MessageTest::testSetUser
+ok 56 - ItbTest\MessageTest::testSetText
+ok 57 - ItbTest\MessageTest::testSetTimeStamp
+ok 58 - ItbTest\PrivateMessageTest::testGetId
+ok 59 - ItbTest\PrivateMessageTest::testText
+ok 60 - ItbTest\PrivateMessageTest::testUser
+ok 61 - ItbTest\PrivateMessageTest::testTimeStamp
+ok 62 - ItbTest\PrivateMessageTest::testReciver
+ok 63 - ItbTest\PrivateMessageTest::testSetUser
+ok 64 - ItbTest\PrivateMessageTest::testSetText
+ok 65 - ItbTest\PrivateMessageTest::testSetTimeStamp
+ok 66 - ItbTest\PrivateMessageTest::testSetReciver
+ok 67 - ItbTest\StudentTest::testGetId
+ok 68 - ItbTest\StudentTest::testFirst
+ok 69 - ItbTest\StudentTest::testSurname
+ok 70 - ItbTest\StudentTest::testAge
+ok 71 - ItbTest\StudentTest::testGpa
+ok 72 - ItbTest\StudentTest::testStatus
+ok 73 - ItbTest\StudentTest::testSetId
+ok 74 - ItbTest\StudentTest::testSetFirst
+ok 75 - ItbTest\StudentTest::testSetSurname
+ok 76 - ItbTest\StudentTest::testSetAge
+ok 77 - ItbTest\StudentTest::testSetStatus
+ok 78 - ItbTest\StudentTest::testSetGpa
+ok 79 - ItbTest\StydentTest::testGetId
+ok 80 - ItbTest\StydentTest::testFirst
+ok 81 - ItbTest\StydentTest::testSurname
+ok 82 - ItbTest\StydentTest::testStatus
+ok 83 - ItbTest\UserTest::testGetId
+ok 84 - ItbTest\UserTest::testUsername
+ok 85 - ItbTest\UserTest::testPassword
+ok 86 - ItbTest\UserTest::testRole
+ok 87 - ItbTest\UserTest::testSetId
+ok 88 - ItbTest\UserTest::testSetUsername
+ok 89 - ItbTest\UserTest::testSetPassword
+ok 90 - ItbTest\UserTest::testSetRole
+ok 91 - ItbTest\UserTest::testCheckRole
+ok 92 - ItbTest\UserTest::testRetrieveId
+ok 93 - ItbTest\UserTest::testCanmatchingUsernameOrPassword
+ok 94 - ItbTest\UserTest::testGetOneById
+1..94

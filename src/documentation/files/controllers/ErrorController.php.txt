@@ -14,6 +14,8 @@ namespace Itb\Controller;
 
 
 use Silex\Application;
+use Itb\Model\User;
+use Itb\Model\DatabaseTableRepository;
 
 /**
  * Class ErrorController - manage errors
@@ -33,9 +35,17 @@ class ErrorController
 	*/
    public function errorAction(Application $app, $code)
        {
+       		$applicationrepository = new DatabaseTableRepository('User', ' users');
+		   	$users = $applicationrepository->getAll();
+
            // default - assume a 404 error
-           $argsArray = [];
-           $templateName = '404';
+           $argsArray = [
+
+           		'users' => $users,
+
+           ];
+           $templateName = 'error404';
+
 
            if (404 != $code){
                $argsArray = [

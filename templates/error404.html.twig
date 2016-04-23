@@ -1,0 +1,35 @@
+
+
+{% extends '_base.html.twig' %}
+
+{# ------------------------------------------------- #}
+{% block pageTitle %}Error 404{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block indexLinkStyle %}current_page{% endblock %}
+
+{# ------------------------------------------------- #}
+{% block main %}
+
+	
+	<h1>Whoops!</h1>
+	
+	<p class="error" style=color:red;background-color:skyblue;>
+	    {% for users in users%}
+	    {{users.role}}
+	    {% endfor %}
+	    <img  src="images/404.jpg" style="margin-left:30%">
+	    
+	    {% if users.role0 != 1 %}
+	        Kenny is sick.
+	    {% elseif kenny.dead %}
+	        You killed Kenny! You bastard!!!
+	    {% else %}
+	        Kenny looks okay --- so far
+{% endif %}
+
+	</p>
+	
+
+	
+{% endblock %}

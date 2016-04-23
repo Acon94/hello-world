@@ -1,5 +1,13 @@
 <?php
+/**
+ * private message class
+ */
 namespace Itb\Model;
+
+/**
+ * Class PrivateMessage
+ * @package Itb\Model
+ */
 
 class PrivateMessage
 {
@@ -10,6 +18,7 @@ class PrivateMessage
     private $id;
 
     /**
+     * variable for text
      * @var string $text
      */
     private $text;
@@ -34,6 +43,7 @@ class PrivateMessage
 
 
     /**
+     * get id method
      * @return int
      */
     public function getId()
@@ -41,35 +51,65 @@ class PrivateMessage
         return $this->id;
     }
 
+    /**
+     * set text of message
+     * @param $text
+     */
     public function setText($text)
     {
         $this->text = $text;
     }
 
+    /**
+     * set user
+     * @param $user
+     */
     public function setUser($user)
     {
         $this->user = $user;
     }
 
+    /**
+     * get test
+     * @return string
+     */
     public function getText()
     {
         return $this->text;
     }
 
+    /**
+     * get reciver of message
+     * @return \DateTime
+     */
+
     public function getReciver()
 	    {
 	        return $this->reciver;
     }
+
+    /**
+     * set the reciver
+     * @param $reciver
+     */
      public function setReciver($reciver)
-	    {
+    {
 	        $this->reciver = $reciver;
     }
 
+    /**
+     * get user
+     * @return string
+     */
     public function getUser()
     {
         return $this->user;
     }
 
+    /**
+     * settime stamp
+     * @param $timestamp
+     */
     public function setTimestamp($timestamp)
     {
         $this->timestamp = $timestamp;

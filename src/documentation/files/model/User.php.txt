@@ -1,26 +1,49 @@
 <?php
-
+/**
+ * User class used for checing for an login account
+ *
+ */
 namespace Itb\Model;
 use Mattsmithdev\PdoCrud\DatabaseTable;
 
 
 
 
-/*
-*	use Itb\Model\DatabaseTable;
-*	use Itb\Model\DatabaseManager;
+/**
+* class Uer this is the user class
 */
 class User extends DatabaseTable
 {
+    /**
+     *
+     */
     const ROLE_USER = 1;
     const ROLE_ADMIN = 2;
 
+    /**
+     * id of the user
+     * @var int
+     */
     private $id;
+    /**
+     * username of the user
+     * @var string
+     */
     private $username;
+    /**
+     * password of the user
+     * @var string
+     */
     private $password;
+
+    /**
+     * int to represnt the users role
+     * @var int
+     */
     private $role;
 
     /**
+     * get id function
      * @return mixed
      */
     public function getId()
@@ -29,6 +52,7 @@ class User extends DatabaseTable
     }
 
     /**
+     * set urse id
      * @param mixed $id
      */
     public function setId($id)
@@ -37,6 +61,7 @@ class User extends DatabaseTable
     }
 
     /**
+     * username get function
      * @return mixed
      */
     public function getUsername()
@@ -45,6 +70,7 @@ class User extends DatabaseTable
     }
 
     /**
+     * set username
      * @param mixed $username
      */
     public function setUsername($username)
@@ -53,6 +79,7 @@ class User extends DatabaseTable
     }
 
     /**
+     * get the password
      * @return mixed
      */
     public function getPassword()
@@ -61,6 +88,7 @@ class User extends DatabaseTable
     }
 
     /**
+     * get role
      * @return mixed
      */
     public function getRole()
@@ -69,6 +97,7 @@ class User extends DatabaseTable
     }
 
     /**
+     * set the role of th user
      * @param mixed $role
      */
     public function setRole($role)
@@ -86,11 +115,12 @@ class User extends DatabaseTable
 
         $this->password = $hashedPassword;
     }
+
     /**
-    *
-    * function to gt the role
-    *
-    */
+     * check role
+     * @param $username
+     * @return mixed
+     */
     public static function checkRole($username)
     {
 		$db = new DatabaseManager();
@@ -103,11 +133,12 @@ class User extends DatabaseTable
     		return $role;
 
     }
+
     /**
-  	*
-	* function to get the id
-	*
-	*/
+     * gets id odf the user
+     * @param $username
+     * @return mixed
+     */
 	public static function retrieveID($username)
 		{
 			$db = new DatabaseManager();

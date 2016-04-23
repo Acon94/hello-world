@@ -1,22 +1,11 @@
 <?php
+/**
+ * Stydent class
+ *
+ */
 namespace Itb\Model;
 /**
- * Created by PhpStorm.
- * User: matt
- * Date: 26/01/2016
- * Time: 10:44
- *
- * represent DVD objects for use in voting system
- *
- *
-<th> ID </th>
-<th> first </th>
-<th> category </th>
-<th> price </th>
-<th> vote average </th>
-<th> num votes </th>
-<th> stars </th>
- *
+ * class stydent represnts student objects
  */
 class Stydent
 {
@@ -27,25 +16,29 @@ class Stydent
     private $id;
 
     /**
+     * first name
      * @var string $first
      */
 
    private $first;
 
    /**
-	     * @var string $surname
-	     */
+    * surname
+    * @var string $surname
+     */
     private $surname;
 
 
 
     /**
+     * employment status
      * @var string
      */
     private $status;
 
 
     /**
+     * id
      * @return int
      */
     public function getId()
@@ -53,16 +46,31 @@ class Stydent
         return $this->id;
     }
 
+    /**
+     * get first name
+     * @return string
+     */
     public function getFirst()
     {
         return $this->first;
     }
-     public function getSurname()
-	    {
+
+    /**
+     *
+     * get the surname
+     * @return string
+     *
+     */
+    public function getSurname()
+	{
 	        return $this->surname;
     }
 
-
+    /**
+     * get the status
+     * @return string
+     *
+     */
 
     public function getStatus()
     {

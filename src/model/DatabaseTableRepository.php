@@ -1,17 +1,41 @@
 <?php
+/**
+ * DAtabase table class
+ */
 namespace Itb\Model;
 
+/**
+ * Class DatabaseTableRepository
+ * @package Itb\Model
+ */
 class DatabaseTableRepository
 {
+    /**
+     * name of the class
+     * @var string
+     */
     private $className;
+    /**
+     * name of the table
+     * @var string
+     */
     private $tableName;
 
+    /**
+     * DatabaseTableRepository constructor.
+     * @param $className
+     * @param $tableName
+     */
     public function __construct($className, $tableName)
     {
         $this->className = __NAMESPACE__ . '\\' . $className;
         $this->tableName = $tableName;
     }
 
+    /**
+     * get all items from db
+     * @return array
+     */
     public function getAll()
     {
         $db = new DatabaseManager();
@@ -31,6 +55,12 @@ class DatabaseTableRepository
 */
         return $objects;
     }
+
+    /**
+     * get cv by id
+     * @param $id
+     * @return array
+     */
       public function getCV($id)
 	    {
 	        $db = new DatabaseManager();
@@ -52,6 +82,11 @@ class DatabaseTableRepository
 	        return $objects;
     }
 
+    /**
+     * get one item by id
+     * @param $id
+     * @return mixed|null
+     */
     public function getOneById($id)
     {
         $db = new DatabaseManager();
@@ -69,7 +104,11 @@ class DatabaseTableRepository
         }
     }
 
-
+    /**
+     * used to get all the private messages associated with a user
+     * @param $id
+     * @return array
+     */
     public function getAllPrivate($id)
     {
         $db = new DatabaseManager();
@@ -110,6 +149,12 @@ class DatabaseTableRepository
         return $queryWasSuccessful;
     }
 
+    /**
+     * search by coloumn
+     * @param $columnName
+     * @param $searchText
+     * @return array
+     */
 
     public function searchByColumn($columnName, $searchText)
     {
@@ -131,10 +176,10 @@ class DatabaseTableRepository
 
 
     /**
-     * insert new record into the DB table
-     * returns new record ID if insertation was successful, otherwise -1
-     * @param Object $object
-     * @return integer
+     * create a new entry
+     * @param $object
+     * @return int|string
+     *
      */
     public function create($object)
     {
@@ -160,11 +205,12 @@ class DatabaseTableRepository
 
 
     /**
-     * insert new record into the DB table
-     * returns new record ID if insertation was successful, otherwise -1
-     * @param Object $object
-     * @return integer
+     * update a existing entry
+     * @param $object
+     * @param $id
+     * @return bool
      */
+
     public function update($object, $id)
     {
         $db = new DatabaseManager();

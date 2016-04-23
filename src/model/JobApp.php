@@ -1,4 +1,9 @@
 <?php
+/**
+ *
+ * This is used when creating a new job
+ *
+ */
 namespace Itb\Model;
 
 /**
@@ -46,7 +51,7 @@ class JobApp
 
     /**
     *
-    * date of jobs
+    * address
     * @var string
     */
 
@@ -54,7 +59,7 @@ class JobApp
 
     /**
     *
-    * date of jobs
+    * gender
     * @var string
     */
 
@@ -62,22 +67,22 @@ class JobApp
 
    /**
    *
-   * date of jobs
+   * experience
    * @var string
    */
 
 	private $experience;
 
 	/**
-	*
-	*
-	*/
+	 * position of the job
+	 * @var string
+	 */
 
 	private $position;
 
 	/**
 	*
-	* date of jobs
+	* image
 	* @var string
 	*/
 
@@ -85,6 +90,7 @@ class JobApp
 
 
     /**
+	 * return id of the jon
      * @return int
      */
     public function getId()
@@ -93,6 +99,7 @@ class JobApp
     	}
 
     /**
+	 * get first name
     *	@return string
     */
 
@@ -102,6 +109,7 @@ class JobApp
     	}
 
     /**
+	 * get surname
 	*	@return string
 	*/
 
@@ -111,6 +119,7 @@ class JobApp
     	}
 
     /**
+	 * get age
 	*	@return string
 	*/
 
@@ -119,6 +128,7 @@ class JobApp
 	        return $this->age;
 	    }
 	/**
+	 * get address
 	*	@return string
 	*/
 
@@ -128,6 +138,8 @@ class JobApp
 	    }
 
 	/**
+	 *
+	 * get gender
 	*	@return string
 	*/
 
@@ -137,6 +149,7 @@ class JobApp
 	    }
 
 	/**
+	 * get experience
 	*	@return string
 	*/
 	public function getExperience()
@@ -145,8 +158,9 @@ class JobApp
 		    return $this->experience;
 	    }
 	/**
-		*	@return string
-		*/
+	 * get position
+	 *	@return string
+	 */
 		public function getPosition()
 
 			{
@@ -155,6 +169,7 @@ class JobApp
 
 
 	/**
+	*   get image
 	*	@return string
 	*/
 
@@ -163,38 +178,83 @@ class JobApp
 		    return $this->image;
 	    }
 
+	/**
+	 * set id of job
+	 * @param $id
+	 */
 	public function setId($id)
 	    {
 	        $this->id = $id;
     	}
+
+	/**
+	 * set first of applicant
+	 * @param $first
+	 */
 	public function setFirst($first)
 	    {
 	        $this->first = $first;
     	}
+
+	/**
+	 * set surname of applicant
+	 * @param $surname
+	 */
     public function setSurname($surname)
 	    {
 	        $this->surname = $surname;
     	}
+
+	/**
+	 * ste Age of applciant
+	 * @param $age
+	 */
     public function setAge($age)
 	    {
 	        $this->age = $age;
     	}
+
+	/**
+	 *
+	 * set address of applicant
+	 * @param $address
+	 */
     public function setAddress($address)
 	    {
 	        $this->address = $address;
     	}
+
+	/**
+	 * set gender of applicant
+	 * @param $gender
+	 */
     public function setGender($gender)
 	    {
 	        $this->gender = $gender;
     	}
+
+	/**
+	 * set experience
+	 * @param $experience
+	 */
     public function setExperience($experience)
 	    {
 	        $this->experience = $experience;
     	}
-    	public function setPosition($position)
-			    {
-			        $this->position = $position;
+
+	/**
+	 * se t position
+	 * @param $position
+	 */
+   	public function setPosition($position)
+	    {
+	        $this->position = $position;
     	}
+
+	/**
+	 * set image
+	 * @param $image
+	 */
     public function setImage($image)
 		{
 	        $this->image = $image;

@@ -1,13 +1,28 @@
 <?php
+/**
+ * repository class
+ */
 namespace Itb\Model;
-
+/**
+ * Class DvdRepository
+ * @package Itb\Model
+ */
 class DvdRepository extends DatabaseTableRepository
 {
+    /**
+     *
+     * DvdRepository constructor.
+     */
     public function __construct()
     {
         parent::__construct('Dvd', 'students');
     }
 
+    /**
+     * search by title
+     * @param $searchText
+     * @return array
+     */
     public function searchByTitleOrCategory($searchText)
     {
         $db = new DatabaseManager();

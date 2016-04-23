@@ -1,7 +1,13 @@
 <?php
+/**
+ * thisis the student class us  to represent a student
+ */
 namespace Itb\Model;
 
-
+/**
+ * Class Student
+ * @package Itb\Model
+ */
 class Student
 {
     /**
@@ -11,23 +17,27 @@ class Student
     private $id;
 
     /**
+	 * students first name
      * @var string $first
      */
 
    private $first;
 
    /**
-	     * @var string $surname
-	     */
+	* students surname
+    * @var string $surname
+    */
     private $surname;
 
 
     /**
+	 * student status
      * @var string
      */
     private $status;
 
       /**
+	   * stuident gpa
          * @var string
          */
     private $gpa;
@@ -90,29 +100,57 @@ class Student
         return $this->status;
     }
 
-
+	/**
+	 * set first name of student
+	 * @param $first
+	 */
 
    public function setFirst($first)
 	    {
 		        $this->first = $first;
     	}
 
+	/**
+	 * set surname of student
+	 * @param $surname
+	 */
     public function setSurname($surname)
 	    {
 		        $this->surname = $surname;
     	}
+
+	/**
+	 * set age of student
+	 * @param $age
+	 */
     public function setAge($age)
 	    {
 		        $this->age = $age;
     	}
+
+	/**
+	 * set gpa of student
+	 * @param $gpa
+	 */
     public function setGpa($gpa)
 	    {
 		        $this->gpa = $gpa;
     	}
+
+	/**
+	 * set status of student
+	 * @param $status
+	 */
     public function setStatus($status)
 		{
 		        $this->status = $status;
     	}
+
+	/**
+	 *
+	 * set id of student
+	 * @param $id
+	 */
     public function setId($id)
 		{
 		        $this->id = $id;

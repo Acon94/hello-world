@@ -1,13 +1,17 @@
 <?php
+/**
+ *
+ * Job Model class
+ *
+ *
+ *
+ */
 namespace Itb\Model;
 
 /**
  * Created by PhpStorm.
- * User: matt
- * Date: 26/01/2016
- * Time: 10:44
  *
- * represent DVD objects for use in voting system
+ * represent Job variables
  *
  *
 <th> ID </th>
@@ -35,19 +39,20 @@ class Job
 	    * @var string
 	    */
 
-		private $location;
+	private $location;
 
 
-		 /**
-		    *
-		    * date of jobs
-		    * @var string
-		    */
+	 /**
+	 *
+	 * date of jobs
+	 * @var string
+	 */
 
-		private $expires;
+	private $timestamp;
 
 
     /**
+	 * get id of the job
      * @return int
      */
     public function getId()
@@ -56,27 +61,35 @@ class Job
     }
 
     /**
+	*	get the position of the job
     *	@return string
     */
     public function getPosition()
-	    {
+	{
 	        return $this->position;
     }
      /**
-	    *	@return string
+	  *	get the location of the job
+	  * @return string
 	    */
-	    public function getLocation()
-		    {
+	public function getLocation()
+	{
 		        return $this->location;
     }
 
-    /**
-		    *	@return string
-		    */
-		    public function getexpires()
-			    {
-			        return $this->expires;
-	    }
+	/**
+	 *get time job expires
+	 * @return \DateTime
+	 */
+	public function getexpires()
+	   {
+	        $dateTimeObject = new \DateTime();
+	        $dateTimeObject->setTimestamp($this->timestamp);
+
+		     return $dateTimeObject;
+	   }
+
+
 
 
 

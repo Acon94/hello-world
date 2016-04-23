@@ -1,13 +1,17 @@
 <?php
-/*******************************************************************************
-* Utility to generate font definition files                                    *
-*                                                                              *
-* Version: 1.3                                                                 *
-* Date:    2015-11-29                                                          *
-* Author:  Olivier PLATHEY                                                     *
-*******************************************************************************/
+/**
+ * related to the font of characters
+ */
+/**
+ * test
+ */
 
 require('ttfparser.php');
+/**
+ * message
+ * @param $txt
+ * @param string $severity
+ */
 
 function Message($txt, $severity='')
 {
@@ -25,22 +29,40 @@ function Message($txt, $severity='')
 	}
 }
 
+/**
+ * notice
+ * @param $txt
+ */
 function Notice($txt)
 {
 	Message($txt, 'Notice');
 }
 
+/**
+ * warning
+ * @param $txt
+ */
 function Warning($txt)
 {
 	Message($txt, 'Warning');
 }
 
+/**
+ * error
+ * @param $txt
+ */
 function Error($txt)
 {
 	Message($txt, 'Error');
 	exit;
 }
 
+/**
+ * load map
+ * @param $enc
+ * @return array
+ *
+ */
 function LoadMap($enc)
 {
 	$file = dirname(__FILE__).'/'.strtolower($enc).'.map';
@@ -59,6 +81,15 @@ function LoadMap($enc)
 	return $map;
 }
 
+
+/**
+ * get info from type
+ * @param $file
+ * @param $embed
+ * @param $subset
+ * @param $map
+ * @return mixed
+ */
 function GetInfoFromTrueType($file, $embed, $subset, $map)
 {
 	// Return information from a TrueType font
@@ -121,6 +152,13 @@ function GetInfoFromTrueType($file, $embed, $subset, $map)
 	return $info;
 }
 
+/**
+ * get info from type 1
+ * @param $file
+ * @param $embed
+ * @param $map
+ * @return mixed
+ */
 function GetInfoFromType1($file, $embed, $map)
 {
 	// Return information from a Type1 font
@@ -215,6 +253,11 @@ function GetInfoFromType1($file, $embed, $map)
 	return $info;
 }
 
+/**
+ * make font descriptor
+ * @param $info
+ * @return string
+ */
 function MakeFontDescriptor($info)
 {
 	// Ascent
@@ -252,6 +295,12 @@ function MakeFontDescriptor($info)
 	return $fd;
 }
 
+/**
+ * mAKE WIDTH ARRA Y
+ * @param $widths
+ * @return string
+ */
+
 function MakeWidthArray($widths)
 {
 	$s = "array(\n\t";
@@ -275,6 +324,11 @@ function MakeWidthArray($widths)
 	return $s;
 }
 
+/**
+ * make font encoding
+ * @param $map
+ * @return string
+ */
 function MakeFontEncoding($map)
 {
 	// Build differences from reference encoding
@@ -294,6 +348,11 @@ function MakeFontEncoding($map)
 	return rtrim($s);
 }
 
+/**
+ * makeunicode array
+ * @param $map
+ * @return string
+ */
 function MakeUnicodeArray($map)
 {
 	// Build mapping to Unicode values
@@ -339,6 +398,12 @@ function MakeUnicodeArray($map)
 	return $s;
 }
 
+/**
+ * SAVE TO FILE
+ * @param $file
+ * @param $s
+ * @param $mode#
+ */
 function SaveToFile($file, $s, $mode)
 {
 	$f = fopen($file, 'w'.$mode);
@@ -348,6 +413,16 @@ function SaveToFile($file, $s, $mode)
 	fclose($f);
 }
 
+/**
+ * make definition file
+ * @param $file
+ * @param $type
+ * @param $enc
+ * @param $embed
+ * @param $subset
+ * @param $map
+ * @param $info
+ */
 function MakeDefinitionFile($file, $type, $enc, $embed, $subset, $map, $info)
 {
 	$s = "<?php\n";
@@ -381,6 +456,13 @@ function MakeDefinitionFile($file, $type, $enc, $embed, $subset, $map, $info)
 	SaveToFile($file, $s, 't');
 }
 
+/**
+ * make font
+ * @param $fontfile
+ * @param string $enc
+ * @param bool $embed
+ * @param bool $subset
+ */
 function MakeFont($fontfile, $enc='cp1252', $embed=true, $subset=true)
 {
 	// Generate a font definition file

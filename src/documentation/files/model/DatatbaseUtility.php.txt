@@ -7,7 +7,11 @@
  */
 namespace Itb\Model;
 
-
+/**
+ *
+ * Class DatatbaseUtility
+ * @package Itb\Model
+ */
 class DatatbaseUtility
 {
 

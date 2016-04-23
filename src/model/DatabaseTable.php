@@ -1,6 +1,13 @@
 <?php
+/**
+ * Database table class
+ */
 namespace Itb\Model;
 
+/**
+ * Class DatabaseTable
+ * @package Itb\Model
+ */
 class DatabaseTable
 {
     /**
@@ -23,6 +30,10 @@ class DatabaseTable
         return $classNameLower . 's';
     }
 
+    /**
+     * gets all data from table
+     * @return array
+     */
     public static function getAll()
     {
         $db = new DatabaseManager();
@@ -38,6 +49,11 @@ class DatabaseTable
         return $objects;
     }
 
+    /**
+     * get one by id from table
+     * @param $id
+     * @return mixed|null
+     */
     public static function getOneById($id)
     {
         $db = new DatabaseManager();
@@ -74,7 +90,12 @@ class DatabaseTable
         return $queryWasSuccessful;
     }
 
-
+    /**
+     * used to search for a specific item
+     * @param $columnName
+     * @param $searchText
+     * @return array
+     */
     public static function searchByColumn($columnName, $searchText)
     {
         $db = new DatabaseManager();

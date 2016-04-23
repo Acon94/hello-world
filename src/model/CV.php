@@ -1,4 +1,7 @@
 <?php
+/**
+ * CV class
+ */
 namespace Itb\Model;
 
 /**
@@ -38,7 +41,7 @@ class CV
 
 	/**
 	*
-	* date of jobs
+	* age of owner
 	* @var string
 	*/
 
@@ -46,7 +49,7 @@ class CV
 
     /**
     *
-    * date of jobs
+    * daddressof owner
     * @var string
     */
 
@@ -54,7 +57,7 @@ class CV
 
     /**
     *
-    * date of jobs
+    * gender of owner
     * @var string
     */
 
@@ -62,7 +65,7 @@ class CV
 
    /**
    *
-   * date of jobs
+   * experience of owner
    * @var string
    */
 
@@ -71,7 +74,7 @@ class CV
 
 	/**
 	*
-	* date of jobs
+	* image
 	* @var string
 	*/
 
@@ -79,6 +82,7 @@ class CV
 
 
     /**
+	 * get id of cv owner
      * @return int
      */
     public function getId()
@@ -87,6 +91,7 @@ class CV
     	}
 
     /**
+	 * get first name
     *	@return string
     */
 
@@ -96,6 +101,7 @@ class CV
     	}
 
     /**
+	 * get surname
 	*	@return string
 	*/
 
@@ -105,6 +111,7 @@ class CV
     	}
 
     /**
+	 * get age
 	*	@return string
 	*/
 
@@ -113,6 +120,7 @@ class CV
 	        return $this->age;
 	    }
 	/**
+	 * get addresss
 	*	@return string
 	*/
 
@@ -122,6 +130,7 @@ class CV
 	    }
 
 	/**
+	 * get gender
 	*	@return string
 	*/
 
@@ -131,6 +140,7 @@ class CV
 	    }
 
 	/**
+	 * get experience
 	*	@return string
 	*/
 	public function getExperience()
@@ -140,6 +150,7 @@ class CV
 	    }
 
 	/**
+	 * get image
 	*	@return string
 	*/
 
@@ -148,34 +159,73 @@ class CV
 		    return $this->image;
 	    }
 
+	/**
+	 * set id
+	 * @param $id
+	 */
 	public function setId($id)
 	    {
 	        $this->id = $id;
     	}
+
+	/**
+	 * set first
+	 * @param $first
+	 */
 	public function setFirst($first)
 	    {
 	        $this->first = $first;
     	}
+
+	/**
+	 * set surname
+	 * @param $surname
+	 */
     public function setSurname($surname)
 	    {
 	        $this->surname = $surname;
     	}
+
+	/**
+	 * set age
+	 * @param $age
+	 */
     public function setAge($age)
 	    {
 	        $this->age = $age;
     	}
+
+	/**
+	 * set Address
+	 * @param $address#
+	 */
     public function setAddress($address)
 	    {
 	        $this->address = $address;
     	}
+
+	/**
+	 * set gender
+	 * @param $gender
+	 */
     public function setGender($gender)
 	    {
 	        $this->gender = $gender;
     	}
+
+	/**
+	 * set Experience
+	 * @param $experience
+	 */
     public function setExperience($experience)
 	    {
 	        $this->experience = $experience;
     	}
+
+	/**
+	 * set image
+	 * @param $image
+	 */
     public function setImage($image)
 		{
 	        $this->image = $image;

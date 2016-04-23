@@ -1,7 +1,7 @@
 {% extends '_base.html.twig' %}
 
 {# ------------------------------------------------- #}
-{% block pageTitle %}List DVDs page{% endblock %}
+{% block pageTitle %}List Students{% endblock %}
 
 {# ------------------------------------------------- #}
 {% block listLinkStyle %}current_page{% endblock %}
@@ -16,21 +16,8 @@
     {% if searchText %}
         <a href="?action=list">(reset search)</a>
     {% endif %}
-    <form
-        action="?action=filterList"
-        method="post">
+  
 
-        <input type="text" name="searchText" value="{{ searchText }}">
-        <input type="submit" value="search first only">
-    </form>
-
-    <form
-            action="?action=filterListTitleOrCategory"
-            method="post">
-
-        <input type="text" name="searchText" value="{{ searchText }}">
-        <input type="submit" value="search first and surname">
-    </form>
 
 
 

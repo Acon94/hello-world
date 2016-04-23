@@ -1,37 +1,130 @@
 <?php
-/*******************************************************************************
-* Class to parse and subset TrueType fonts                                     *
-*                                                                              *
-* Version: 1.1                                                                 *
-* Date:    2015-11-29                                                          *
-* Author:  Olivier PLATHEY                                                     *
-*******************************************************************************/
+/**
+ * part of fpdf resource
+ */
 
+/**
+ * tffparaser
+ * Class TTFParser
+ */
 class TTFParser
 {
+	/**
+	 * variable
+	 * @var resource
+	 */
 	protected $f;
+	/**
+	 * variable
+	 * @var
+	 */
 	protected $tables;
+	/**
+	 * variable
+	 * @var
+	 */
 	protected $numberOfHMetrics;
+	/**
+	 * variable
+	 * @var
+	 */
 	protected $numGlyphs;
+	/**
+	 * variable
+	 * @var
+	 */
 	protected $glyphNames;
+	/**
+	 * variable
+	 * @var
+	 */
 	protected $indexToLocFormat;
+	/**
+	 * variable
+	 * @var
+	 */
 	protected $subsettedChars;
+	/**
+	 * variable
+	 * @var
+	 */
 	protected $subsettedGlyphs;
+	/**
+	 * variable
+	 * @var
+	 */
 	public $chars;
+	/**
+	 * variable
+	 * @var
+	 */
 	public $glyphs;
+	/**
+	 * variable
+	 * @var
+	 */
 	public $unitsPerEm;
+	/**
+	 * variable
+	 * @var
+	 */
 	public $xMin, $yMin, $xMax, $yMax;
+	/**
+	 * variable
+	 * @var
+	 */
 	public $postScriptName;
+	/**
+	 * variable
+	 * @var
+	 */
 	public $embeddable;
+	/**
+	 * variable
+	 * @var
+	 */
 	public $bold;
+	/**
+	 * variable
+	 * @var
+	 */
 	public $typoAscender;
+	/**
+	 * variable
+	 * @var
+	 */
 	public $typoDescender;
+	/**
+	 * variable
+	 * @var
+	 */
 	public $capHeight;
-	public $italicAngle;
+	/**
+	 * variable
+	 * @var
+	 */
+	public $italicAngle;#
+	/**
+	 * variable
+	 * @var
+	 */
 	public $underlinePosition;
+	/**
+	 * variable
+	 * @var
+	 */
 	public $underlineThickness;
+	/**
+	 * variable
+	 * @var
+	 *
+	 */
 	public $isFixedPitch;
 
+	/**
+	 * TTFParser constructor.
+	 * @param $file
+	 */
 	function __construct($file)
 	{
 		$this->f = fopen($file, 'rb');
@@ -39,12 +132,18 @@ class TTFParser
 			$this->Error('Can\'t open file: '.$file);
 	}
 
+	/**
+	 * _destruct
+	 */
 	function __destruct()
 	{
 		if(is_resource($this->f))
 			fclose($this->f);
 	}
 
+	/**
+	 * parase
+	 */
 	function Parse()
 	{
 		$this->ParseOffsetTable();
@@ -60,6 +159,10 @@ class TTFParser
 		$this->ParsePost();
 	}
 
+	/**
+	 * parae off sit table
+	 * @throws Exception
+	 */
 	function ParseOffsetTable()
 	{
 		$version = $this->Read(4);
@@ -78,8 +181,12 @@ class TTFParser
 			$length = $this->ReadULong(4);
 			$this->tables[$tag] = array('offset'=>$offset, 'length'=>$length, 'checkSum'=>$checkSum);
 		}
-	}	
+	}
 
+	/**
+	 * parase head
+	 * @throws Exception
+	 */
 	function ParseHead()
 	{
 		$this->Seek('head');
@@ -98,6 +205,9 @@ class TTFParser
 		$this->indexToLocFormat = $this->ReadShort();
 	}
 
+	/**
+	 * parase hhea
+	 */
 	function ParseHhea()
 	{
 		$this->Seek('hhea');
@@ -105,6 +215,9 @@ class TTFParser
 		$this->numberOfHMetrics = $this->ReadUShort();
 	}
 
+	/**
+	 * parae maxp
+	 */
 	function ParseMaxp()
 	{
 		$this->Seek('maxp');
@@ -112,6 +225,10 @@ class TTFParser
 		$this->numGlyphs = $this->ReadUShort();
 	}
 
+	/**
+	 * parase hmyx
+	 *
+	 */
 	function ParseHmtx()
 	{
 		$this->Seek('hmtx');
@@ -129,6 +246,9 @@ class TTFParser
 		}
 	}
 
+	/**
+	 * parase local
+	 */
 	function ParseLoca()
 	{
 		$this->Seek('loca');
@@ -151,7 +271,7 @@ class TTFParser
 			$this->glyphs[$i]['length'] = $offsets[$i+1] - $offsets[$i];
 		}
 	}
-
+	/** parase glyf */
 	function ParseGlyf()
 	{
 		$tableOffset = $this->tables['glyf']['offset'];
@@ -191,6 +311,9 @@ class TTFParser
 		}
 	}
 
+	/**
+	 * parase cmap
+	 */
 	function ParseCmap()
 	{
 		$this->Seek('cmap');
@@ -259,6 +382,10 @@ class TTFParser
 		}
 	}
 
+	/**
+	 * perase name
+	 * @throws Exception
+	 */
 	function ParseName()
 	{
 		$this->Seek('name');
@@ -288,6 +415,9 @@ class TTFParser
 			$this->Error('PostScript name not found');
 	}
 
+	/**
+	 * perase OS2
+	 */
 	function ParseOS2()
 	{
 		$this->Seek('OS/2');
@@ -310,6 +440,10 @@ class TTFParser
 			$this->capHeight = 0;
 	}
 
+	/**
+	 * Parase Post
+	 *
+	 */
 	function ParsePost()
 	{
 		$this->Seek('post');
@@ -352,6 +486,10 @@ class TTFParser
 			$this->glyphNames = false;
 	}
 
+	/**
+	 * Subset
+	 * @param $chars
+	 */
 	function Subset($chars)
 	{
 /*		$chars = array_keys($this->chars);
@@ -375,6 +513,10 @@ class TTFParser
 		}
 	}
 
+	/**
+	 * add glyph
+	 * @param $id
+	 */
 	function AddGlyph($id)
 	{
 		if(!isset($this->glyphs[$id]['ssid']))
@@ -389,6 +531,11 @@ class TTFParser
 		}
 	}
 
+	/**
+	 * build
+	 * @return string
+	 *
+	 */
 	function Build()
 	{
 		$this->BuildCmap();
@@ -401,6 +548,9 @@ class TTFParser
 		return $this->BuildFont();
 	}
 
+	/**
+	 * build cmap
+	 */
 	function BuildCmap()
 	{
 		if(!isset($this->subsettedChars))
@@ -486,6 +636,9 @@ class TTFParser
 		$this->SetTable('cmap', $data);
 	}
 
+	/**
+	 * Build hhea
+	 */
 	function BuildHhea()
 	{
 		$this->LoadTable('hhea');
@@ -494,6 +647,9 @@ class TTFParser
 		$this->SetTable('hhea', $data);
 	}
 
+	/**
+	 * build hmtx
+	 */
 	function BuildHmtx()
 	{
 		$data = '';
@@ -505,6 +661,9 @@ class TTFParser
 		$this->SetTable('hmtx', $data);
 	}
 
+	/**
+	 * build local
+	 */
 	function BuildLoca()
 	{
 		$data = '';
@@ -524,6 +683,9 @@ class TTFParser
 		$this->SetTable('loca', $data);
 	}
 
+	/**
+	 * build glypf
+	 */
 	function BuildGlyf()
 	{
 		$tableOffset = $this->tables['glyf']['offset'];
@@ -547,6 +709,9 @@ class TTFParser
 		$this->SetTable('glyf', $data);
 	}
 
+	/**
+	 * build maxp
+	 */
 	function BuildMaxp()
 	{
 		$this->LoadTable('maxp');
@@ -555,6 +720,9 @@ class TTFParser
 		$this->SetTable('maxp', $data);
 	}
 
+	/**
+	 * buildpost
+	 */
 	function BuildPost()
 	{
 		$this->Seek('post');
@@ -590,6 +758,10 @@ class TTFParser
 		$this->SetTable('post', $data);
 	}
 
+	/**
+	 * build font
+	 * @return string
+	 */
 	function BuildFont()
 	{
 		$tags = array();
@@ -643,6 +815,10 @@ class TTFParser
 		return $font;
 	}
 
+	/**
+	 * load table
+	 * @param $tag
+	 */
 	function LoadTable($tag)
 	{
 		$this->Seek($tag);
@@ -653,6 +829,11 @@ class TTFParser
 		$this->tables[$tag]['data'] = $this->Read($length);
 	}
 
+	/**
+	 * set table
+	 * @param $tag
+	 * @param $data
+	 */
 	function SetTable($tag, $data)
 	{
 		$length = strlen($data);
@@ -664,6 +845,11 @@ class TTFParser
 		$this->tables[$tag]['checkSum'] = $this->CheckSum($data);
 	}
 
+	/**
+	 * seek
+	 * @param $tag
+	 * @throws Exception
+	 */
 	function Seek($tag)
 	{
 		if(!isset($this->tables[$tag]))
@@ -671,22 +857,39 @@ class TTFParser
 		fseek($this->f, $this->tables[$tag]['offset'], SEEK_SET);
 	}
 
+	/**
+	 * skip
+	 * @param $n
+	 */
 	function Skip($n)
 	{
 		fseek($this->f, $n, SEEK_CUR);
 	}
 
+	/**
+	 * tread
+	 * @param $n
+	 * @return string
+	 */
 	function Read($n)
 	{
 		return $n>0 ? fread($this->f, $n) : '';
 	}
 
+	/**
+	 * readu short
+	 * @return mixed
+	 */
 	function ReadUShort()
 	{
 		$a = unpack('nn', fread($this->f,2));
 		return $a['n'];
 	}
 
+	/**
+	 * readshort
+	 * @return int
+	 */
 	function ReadShort()
 	{
 		$a = unpack('nn', fread($this->f,2));
@@ -696,12 +899,21 @@ class TTFParser
 		return $v;
 	}
 
+	/**
+	 * read long
+	 * @return mixed
+	 */
 	function ReadULong()
 	{
 		$a = unpack('NN', fread($this->f,4));
 		return $a['N'];
 	}
 
+	/**
+	 * check su m
+	 * @param $s
+	 * @return string
+	 */
 	function CheckSum($s)
 	{
 		$n = strlen($s);
@@ -715,6 +927,11 @@ class TTFParser
 		return pack('nn', $high+($low>>16), $low);
 	}
 
+	/**
+	 * error
+	 * @param $msg
+	 * @throws Exception
+	 */
 	function Error($msg)
 	{
 		throw new Exception($msg);

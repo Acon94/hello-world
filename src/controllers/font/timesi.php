@@ -1,4 +1,7 @@
 <?php
+/**
+ * timesi.php
+ */
 $type = 'Core';
 $name = 'Times-Italic';
 $up = -100;

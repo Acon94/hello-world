@@ -1,6 +1,6 @@
 <?php
 namespace Itb\Model;
-
+/**
 class DvdRepository extends DatabaseTableRepository
 {
     public function __construct()
@@ -25,6 +25,7 @@ class DvdRepository extends DatabaseTableRepository
 
         return $cvs;
     }
+*/
 
 
 
