@@ -4,6 +4,6 @@ php:
 install: 
  composer update
  composer dump-autoload
- composer require  "mattsmithdev/pdo-crud-for-free": "dev-master",
+ composer require  "mattsmithdev/pdo-crud-for-free": "dev-master"
 script: 
  composer phpunit
