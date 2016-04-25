@@ -1,5 +1,9 @@
 language: php
 php:
   - '5.6'
-install: composer update
-script: phpunit
+install: 
+ composer update
+ composer dump-autoload
+ composer require mattsmithdev/pdo-crud-for-free=dev-master
+script: 
+ composer phpunit
