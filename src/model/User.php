@@ -4,7 +4,7 @@
  *
  */
 namespace Itb\Model;
-use Mattsmithdev\PdoCrud\DatabaseTable;
+use Itb\Model\DatabaseTable;
 
 
 
